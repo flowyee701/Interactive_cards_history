@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Интерактивные карточки по истории повседневной жизни в эпоху Советского союза."
+      content="Interactive history quiz about everyday life in the Soviet Union."
     />
-    <title>Интерактивная платформа для истории</title>
+    <title>Interactive History Platform</title>
     <link rel="stylesheet" href="./styles.css" />
     <script type="module" src="./src/main.js"></script>
   </head>
@@ -28,7 +28,7 @@
         <span class="stalin-moustache"></span>
       </div>
       <div class="kvass-barrel">
-        <span class="kvass-sign">КВАС</span>
+        <span class="kvass-sign">KVASS</span>
         <span class="kvass-tap"></span>
         <span class="kvass-wheel kvass-wheel--left"></span>
         <span class="kvass-wheel kvass-wheel--right"></span>
@@ -56,49 +56,57 @@
 
     <div class="app-shell">
       <header class="topbar">
-        <a class="brand" href="./" aria-label="Интерактивная платформа для истории">
+        <a class="brand" href="./" aria-label="Interactive History Platform">
           <span class="brand__mark" aria-hidden="true">
             <img src="./assets/logo-history-platform.svg" alt="" />
           </span>
           <span>
-            <span class="brand__name">Интерактивная платформа для истории</span>
-            <span class="brand__caption">Карточки о повседневной жизни в СССР</span>
+            <span class="brand__name">Interactive History Platform</span>
+            <span class="brand__caption">Cards about everyday life in the USSR</span>
           </span>
         </a>
 
-        <div class="topbar__meta" aria-label="Статистика сессии">
+        <div class="topbar__meta" aria-label="Session statistics">
           <span class="metric">
             <span class="metric__value" data-stat="score">0</span>
-            <span class="metric__label">счет</span>
+            <span class="metric__label">score</span>
           </span>
           <span class="metric">
             <span class="metric__value" data-stat="streak">0</span>
-            <span class="metric__label">серия</span>
+            <span class="metric__label">streak</span>
           </span>
           <span class="metric">
             <span class="metric__value" data-stat="best">0</span>
-            <span class="metric__label">лучший</span>
+            <span class="metric__label">best</span>
           </span>
         </div>
       </header>
 
       <main class="workspace">
-        <section class="deck-panel" aria-label="Настройки подборки">
+        <section class="deck-panel" aria-label="Deck settings">
           <div class="deck-panel__title">
-            <p class="eyebrow">Коллекция</p>
-            <h1>Обычный день в советскую эпоху</h1>
+            <p class="eyebrow">Collection</p>
+            <h1>An Ordinary Day in the Soviet Era</h1>
           </div>
 
           <label class="field" for="periodSelect">
-            <span>Период</span>
-            <select id="periodSelect" data-control="period" aria-label="Период">
-              <option value="all">Все периоды</option>
+            <span>Period</span>
+            <select id="periodSelect" data-control="period" aria-label="Period">
+              <option value="all">All periods</option>
             </select>
           </label>
 
-          <div class="progress-block" aria-label="Прогресс">
+          <label class="toggle-field" for="shuffleToggle">
+            <input id="shuffleToggle" type="checkbox" data-control="shuffle" checked />
+            <span>
+              <strong>Shuffle cards</strong>
+              <small>Turn off for review order</small>
+            </span>
+          </label>
+
+          <div class="progress-block" aria-label="Progress">
             <div class="progress-block__row">
-              <span data-progress-label>0 из 0</span>
+              <span data-progress-label>0 of 0</span>
               <span data-accuracy>0%</span>
             </div>
             <div class="progress-track">
@@ -120,12 +128,13 @@
             <div class="flashcard__stamp" aria-hidden="true"></div>
             <div class="flashcard__content">
               <div class="question-meta">
-                <span data-period-label>Период</span>
-                <span data-difficulty>mock</span>
+                <span data-period-label>Period</span>
+                <span data-question-counter>Question 0 of 0</span>
+                <span data-difficulty>difficulty</span>
               </div>
 
               <p class="question-text" data-question>
-                Загрузка карточек...
+                Loading cards...
               </p>
 
               <div class="tag-list" data-tags></div>
@@ -133,6 +142,8 @@
               <div class="result" data-result hidden>
                 <span class="result__badge" data-result-badge></span>
                 <p data-explanation></p>
+                <div class="result-summary" data-result-summary hidden></div>
+                <a class="source-link" data-source hidden target="_blank" rel="noreferrer"></a>
               </div>
             </div>
           </article>
@@ -142,35 +153,28 @@
             <span></span>
           </div>
 
-          <div class="answer-bar" aria-label="Ответ">
-            <button class="answer-button answer-button--false" type="button" data-answer="false">
-              Ложь
-            </button>
-            <button class="answer-button answer-button--true" type="button" data-answer="true">
-              Правда
-            </button>
-          </div>
+          <div class="answer-bar" data-answers aria-label="Answer"></div>
 
           <div class="stage-actions">
-            <button class="ghost-button" type="button" data-action="restart">Сначала</button>
-            <button class="primary-button" type="button" data-action="next">Дальше</button>
+            <button class="ghost-button" type="button" data-action="restart">Restart</button>
+            <button class="primary-button" type="button" data-action="next">Next</button>
           </div>
         </section>
 
-        <aside class="insight-panel" aria-label="Сводка">
-          <p class="eyebrow">Сессия</p>
-          <h2 data-session-title>Начало</h2>
+        <aside class="insight-panel" aria-label="Summary">
+          <p class="eyebrow">Session</p>
+          <h2 data-session-title>Start</h2>
           <p data-session-note>
-            Выбери ответ, чтобы открыть пояснение и перейти к следующей карточке.
+            Choose an answer to reveal the explanation and move to the next card.
           </p>
           <div class="mini-grid">
             <span>
               <strong data-stat="answered">0</strong>
-              отвечено
+              answered
             </span>
             <span>
               <strong data-stat="remaining">0</strong>
-              осталось
+              left
             </span>
           </div>
         </aside>

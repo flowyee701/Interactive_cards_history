@@ -13,7 +13,7 @@
       },
       "type": {
         "type": "string",
-        "enum": ["true_false"]
+        "enum": ["true_false", "multiple_choice"]
       },
       "period": {
         "type": "string"
@@ -23,7 +23,14 @@
         "minLength": 12
       },
       "answer": {
-        "type": "boolean"
+        "oneOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "string"
+          }
+        ]
       },
       "explanation": {
         "type": "string",
@@ -38,6 +45,39 @@
         "minItems": 1,
         "items": {
           "type": "string"
+        }
+      },
+      "options": {
+        "type": "array",
+        "minItems": 2,
+        "items": {
+          "type": "object",
+          "required": ["id", "label"],
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      },
+      "source": {
+        "type": "object",
+        "required": ["title", "url"],
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 3
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
         }
       }
     }

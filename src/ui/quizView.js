@@ -1,8 +1,10 @@
 const selectors = {
   answerButtons: "[data-answer]",
+  answerBar: "[data-answers]",
   nextButton: "[data-action='next']",
   restartButton: "[data-action='restart']",
-  periodSelect: "[data-control='period']"
+  periodSelect: "[data-control='period']",
+  shuffleToggle: "[data-control='shuffle']"
 };
 
 export function createQuizView(root = document) {
@@ -15,12 +17,16 @@ export function createQuizView(root = document) {
     result: root.querySelector("[data-result]"),
     resultBadge: root.querySelector("[data-result-badge]"),
     explanation: root.querySelector("[data-explanation]"),
+    resultSummary: root.querySelector("[data-result-summary]"),
+    source: root.querySelector("[data-source]"),
+    questionCounter: root.querySelector("[data-question-counter]"),
     progressLabel: root.querySelector("[data-progress-label]"),
     progressFill: root.querySelector("[data-progress-fill]"),
     accuracy: root.querySelector("[data-accuracy]"),
     periods: root.querySelector("[data-periods]"),
     periodSelect: root.querySelector(selectors.periodSelect),
-    answerButtons: [...root.querySelectorAll(selectors.answerButtons)],
+    shuffleToggle: root.querySelector(selectors.shuffleToggle),
+    answerBar: root.querySelector(selectors.answerBar),
     nextButton: root.querySelector(selectors.nextButton),
     restartButton: root.querySelector(selectors.restartButton),
     sessionTitle: root.querySelector("[data-session-title]"),
@@ -36,27 +42,43 @@ export function createQuizView(root = document) {
 }
 
 export function bindQuizEvents(view, handlers) {
-  view.answerButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      handlers.onAnswer(button.dataset.answer === "true");
-    });
+  view.answerBar.addEventListener("click", (event) => {
+    const button = event.target.closest(selectors.answerButtons);
+
+    if (!button || button.disabled) {
+      return;
+    }
+
+    handlers.onAnswer(readAnswerValue(button.dataset.answer));
   });
 
   view.nextButton.addEventListener("click", handlers.onNext);
   view.restartButton.addEventListener("click", handlers.onRestart);
   view.periodSelect.addEventListener("change", () => handlers.onPeriodChange(view.periodSelect.value));
+  view.shuffleToggle.addEventListener("change", () => handlers.onShuffleChange(view.shuffleToggle.checked));
 
   window.addEventListener("keydown", (event) => {
-    if (event.key.toLowerCase() === "t") {
+    const trueFalseButton = view.answerBar.querySelector(`[data-answer="${event.key.toLowerCase() === "t"}"]`);
+
+    if (event.key.toLowerCase() === "t" && trueFalseButton && !trueFalseButton.disabled) {
       handlers.onAnswer(true);
     }
 
-    if (event.key.toLowerCase() === "f") {
+    if (event.key.toLowerCase() === "f" && trueFalseButton && !trueFalseButton.disabled) {
       handlers.onAnswer(false);
     }
 
     if (event.key === "Enter") {
       handlers.onNext();
+    }
+
+    const numberAnswer = Number(event.key);
+    if (numberAnswer >= 1 && numberAnswer <= 4) {
+      const button = getAnswerButtons(view)[numberAnswer - 1];
+
+      if (button && !button.disabled) {
+        handlers.onAnswer(readAnswerValue(button.dataset.answer));
+      }
     }
   });
 }
@@ -65,7 +87,7 @@ export function renderPeriodOptions(view, periods) {
   periods.forEach((period) => {
     const option = document.createElement("option");
     option.value = period;
-    option.textContent = period;
+    option.textContent = periodLabel(period);
     view.periodSelect.append(option);
   });
 
@@ -73,7 +95,7 @@ export function renderPeriodOptions(view, periods) {
     ...periods.map((period) => {
       const chip = document.createElement("span");
       chip.className = "period-chip";
-      chip.textContent = period;
+      chip.textContent = periodLabel(period);
       return chip;
     })
   );
@@ -87,7 +109,10 @@ export function renderSession(view, session, stats, bestScore) {
   view.stats.best.textContent = bestScore;
   view.stats.answered.textContent = session.answered;
   view.stats.remaining.textContent = stats.remaining;
-  view.progressLabel.textContent = `${Math.min(session.answered + 1, stats.total)} из ${stats.total}`;
+  view.progressLabel.textContent = `${Math.min(session.answered + 1, stats.total)} of ${stats.total}`;
+  view.questionCounter.textContent = session.isComplete
+    ? `${stats.total} of ${stats.total}`
+    : `Question ${Math.min(session.currentIndex + 1, stats.total)} of ${stats.total}`;
   view.progressFill.style.width = `${stats.progress}%`;
   view.accuracy.textContent = `${stats.accuracy}%`;
 
@@ -103,12 +128,48 @@ export function renderSession(view, session, stats, bestScore) {
 
   view.card.classList.toggle("is-answered", Boolean(session.lastAnswer));
   view.question.textContent = question.question;
-  view.periodLabel.textContent = question.period;
+  view.periodLabel.textContent = periodLabel(question.period);
   view.difficulty.textContent = difficultyLabel(question.difficulty);
   view.tags.replaceChildren(...question.tags.map(createTag));
 
+  renderAnswers(view, question, session.lastAnswer);
   renderResult(view, session, question);
   renderControls(view, session);
+}
+
+export function renderStartScreen(view, { period, total, bestScore, shuffleEnabled }) {
+  view.card.classList.remove("is-answered");
+  view.stats.score.textContent = "0";
+  view.stats.streak.textContent = "0";
+  view.stats.best.textContent = bestScore;
+  view.stats.answered.textContent = "0";
+  view.stats.remaining.textContent = total;
+  view.progressLabel.textContent = `0 of ${total}`;
+  view.questionCounter.textContent = "Ready";
+  view.progressFill.style.width = "0%";
+  view.accuracy.textContent = "0%";
+  view.question.textContent = "Ready to Play?";
+  view.periodLabel.textContent = period === "all" ? "All periods" : periodLabel(period);
+  view.difficulty.textContent = `${total} cards`;
+  view.tags.replaceChildren(createTag(period === "all" ? "full deck" : periodLabel(period)));
+  view.answerBar.replaceChildren();
+  view.result.hidden = false;
+  view.resultBadge.textContent = "New Session";
+  view.resultBadge.classList.remove("is-wrong");
+  view.explanation.textContent = shuffleEnabled
+    ? "Choose a period if you want a focused deck, then start the quiz. Cards will be shuffled."
+    : "Review order is on. Cards will follow the exact order from the question file.";
+  renderResultSummary(view, [
+    ["Cards", String(total)],
+    ["Best", String(bestScore)],
+    ["Order", shuffleEnabled ? "Shuffle" : "Review"]
+  ]);
+  clearSource(view);
+  view.sessionTitle.textContent = "Ready to Start";
+  view.sessionNote.textContent = "The deck will shuffle when you begin. Use number keys 1-4 to answer faster.";
+  view.nextButton.disabled = total === 0;
+  view.nextButton.textContent = "Start Quiz";
+  view.restartButton.disabled = true;
 }
 
 export function playCardChange(view, updateContent) {
@@ -133,23 +194,30 @@ function renderResult(view, session, question) {
     view.resultBadge.textContent = "";
     view.resultBadge.classList.remove("is-wrong");
     view.explanation.textContent = "";
-    view.sessionTitle.textContent = "Карточка открыта";
-    view.sessionNote.textContent = "Ответь на утверждение и сравни интуицию с историческим контекстом.";
+    clearResultSummary(view);
+    clearSource(view);
+    view.sessionTitle.textContent = "Card Opened";
+    view.sessionNote.textContent = "Choose an answer, then compare your intuition with the historical context.";
+    view.restartButton.disabled = false;
     return;
   }
 
   const { isCorrect, correctAnswer } = session.lastAnswer;
+  const correctAnswerLabel = getAnswerLabel(question, correctAnswer);
 
   view.result.hidden = false;
   view.resultBadge.textContent = isCorrect
-    ? "Верно"
-    : `Неверно, правильный ответ: ${correctAnswer ? "правда" : "ложь"}`;
+    ? "Correct"
+    : `Incorrect, correct answer: ${correctAnswerLabel}`;
   view.resultBadge.classList.toggle("is-wrong", !isCorrect);
   view.explanation.textContent = question.explanation;
-  view.sessionTitle.textContent = isCorrect ? "Точно" : "Есть нюанс";
+  clearResultSummary(view);
+  renderSource(view, question.source);
+  view.sessionTitle.textContent = isCorrect ? "Exactly" : "Worth Noting";
   view.sessionNote.textContent = isCorrect
-    ? "Серия растет. Следующая карточка уже рядом."
-    : "Пояснение помогает поймать контекст, а не просто запомнить ответ.";
+    ? "Your streak is growing. The next card is ready."
+    : "The explanation helps you understand the context, not just memorize the answer.";
+  view.restartButton.disabled = false;
 }
 
 function renderControls(view, session) {
@@ -158,44 +226,55 @@ function renderControls(view, session) {
   setControlsDisabled(view, hasAnswer || session.isComplete);
 
   view.nextButton.disabled = !hasAnswer && !session.isComplete;
-  view.nextButton.textContent = session.answered >= session.questions.length ? "Итог" : "Дальше";
+  view.nextButton.textContent = session.answered >= session.questions.length ? "Results" : "Next";
+  view.restartButton.disabled = false;
 }
 
 function setControlsDisabled(view, disabled) {
-  view.answerButtons.forEach((button) => {
+  getAnswerButtons(view).forEach((button) => {
     button.disabled = disabled;
   });
 }
 
 function renderEmptyState(view) {
-  view.question.textContent = "В этой подборке пока нет карточек.";
-  view.periodLabel.textContent = "Пусто";
-  view.difficulty.textContent = "mock";
+  view.question.textContent = "There are no cards in this deck yet.";
+  view.periodLabel.textContent = "Empty";
+  view.difficulty.textContent = "no data";
   view.tags.replaceChildren();
+  view.answerBar.replaceChildren();
   view.result.hidden = true;
-  view.answerButtons.forEach((button) => {
-    button.disabled = true;
-  });
+  clearResultSummary(view);
+  clearSource(view);
   view.nextButton.disabled = true;
+  view.restartButton.disabled = true;
 }
 
 function renderCompleteState(view, session, stats) {
   view.card.classList.remove("is-answered");
-  view.question.textContent = `Готово: ${session.score} из ${stats.total}`;
-  view.periodLabel.textContent = "Итог";
-  view.difficulty.textContent = `${stats.accuracy}%`;
-  view.tags.replaceChildren(createTag("сессия завершена"));
+  view.question.textContent = "Final Score";
+  view.periodLabel.textContent = "Results";
+  view.questionCounter.textContent = `${stats.total} of ${stats.total}`;
+  view.difficulty.textContent = `${stats.accuracy}% accuracy`;
+  view.tags.replaceChildren(createTag("session complete"));
+  view.answerBar.replaceChildren();
   view.result.hidden = false;
-  view.resultBadge.textContent = stats.accuracy >= 80 ? "Отличный результат" : "Есть куда расти";
+  view.resultBadge.textContent = resultLabel(stats.accuracy);
   view.resultBadge.classList.toggle("is-wrong", stats.accuracy < 50);
-  view.explanation.textContent = "Можно пройти подборку еще раз или выбрать другой период.";
-  view.sessionTitle.textContent = "Сессия завершена";
-  view.sessionNote.textContent = "Лучшие вопросы для запоминания часто те, где ответ сначала кажется очевидным.";
-  view.answerButtons.forEach((button) => {
+  view.explanation.textContent = resultMessage(stats.accuracy);
+  renderResultSummary(view, [
+    ["Score", `${session.score}/${stats.total}`],
+    ["Accuracy", `${stats.accuracy}%`],
+    ["Missed", String(stats.total - session.score)]
+  ]);
+  clearSource(view);
+  view.sessionTitle.textContent = "Session Complete";
+  view.sessionNote.textContent = "The most memorable questions are often the ones that first seem obvious.";
+  getAnswerButtons(view).forEach((button) => {
     button.disabled = true;
   });
   view.nextButton.disabled = false;
-  view.nextButton.textContent = "Заново";
+  view.nextButton.textContent = "Replay";
+  view.restartButton.disabled = false;
 }
 
 function createTag(label) {
@@ -205,12 +284,147 @@ function createTag(label) {
   return tag;
 }
 
+function renderResultSummary(view, items) {
+  view.resultSummary.hidden = false;
+  view.resultSummary.replaceChildren(
+    ...items.map(([label, value]) => {
+      const item = document.createElement("span");
+      const strong = document.createElement("strong");
+      const caption = document.createElement("small");
+
+      strong.textContent = value;
+      caption.textContent = label;
+      item.append(strong, caption);
+
+      return item;
+    })
+  );
+}
+
+function clearResultSummary(view) {
+  view.resultSummary.hidden = true;
+  view.resultSummary.replaceChildren();
+}
+
+function renderAnswers(view, question, lastAnswer) {
+  const options = getQuestionOptions(question);
+
+  view.answerBar.replaceChildren(
+    ...options.map((option) => {
+      const button = document.createElement("button");
+      button.className = "answer-button";
+      button.type = "button";
+      button.dataset.answer = String(option.value);
+      button.textContent = option.label;
+
+      if (lastAnswer) {
+        button.classList.toggle("is-selected", option.value === lastAnswer.selectedAnswer);
+        button.classList.toggle("is-correct", option.value === lastAnswer.correctAnswer);
+        button.classList.toggle(
+          "is-wrong",
+          option.value === lastAnswer.selectedAnswer && !lastAnswer.isCorrect
+        );
+      }
+
+      return button;
+    })
+  );
+}
+
+function getQuestionOptions(question) {
+  if (question.type === "multiple_choice") {
+    return question.options.map((option) => ({
+      value: option.id,
+      label: `${option.id.toUpperCase()}. ${option.label}`
+    }));
+  }
+
+  return [
+    { value: false, label: "False" },
+    { value: true, label: "True" }
+  ];
+}
+
+function getAnswerLabel(question, answer) {
+  const option = getQuestionOptions(question).find((item) => item.value === answer);
+  return option ? option.label : String(answer);
+}
+
+function getAnswerButtons(view) {
+  return [...view.answerBar.querySelectorAll(selectors.answerButtons)];
+}
+
+function readAnswerValue(value) {
+  if (value === "true") {
+    return true;
+  }
+
+  if (value === "false") {
+    return false;
+  }
+
+  return value;
+}
+
+function renderSource(view, source) {
+  if (!source) {
+    clearSource(view);
+    return;
+  }
+
+  view.source.hidden = false;
+  view.source.href = source.url;
+  view.source.textContent = `Source: ${source.title}`;
+}
+
+function clearSource(view) {
+  view.source.hidden = true;
+  view.source.removeAttribute("href");
+  view.source.textContent = "";
+}
+
 function difficultyLabel(difficulty) {
   const labels = {
-    easy: "легко",
-    medium: "средне",
-    hard: "сложно"
+    easy: "easy",
+    medium: "medium",
+    hard: "hard"
   };
 
   return labels[difficulty] ?? difficulty;
+}
+
+function periodLabel(period) {
+  return period;
+}
+
+function resultLabel(accuracy) {
+  if (accuracy >= 90) {
+    return "Excellent";
+  }
+
+  if (accuracy >= 70) {
+    return "Strong Result";
+  }
+
+  if (accuracy >= 50) {
+    return "Good Start";
+  }
+
+  return "Keep Practicing";
+}
+
+function resultMessage(accuracy) {
+  if (accuracy >= 90) {
+    return "You handled this deck with confidence. Replay it later to keep the facts fresh.";
+  }
+
+  if (accuracy >= 70) {
+    return "Solid performance. The missed cards are the best ones to review next.";
+  }
+
+  if (accuracy >= 50) {
+    return "You have the basics. Replay the deck once more and watch the explanations closely.";
+  }
+
+  return "Use the explanations as a short revision guide, then try the deck again.";
 }

@@ -10,6 +10,17 @@ export function createQuizSession(questions) {
   };
 }
 
+export function shuffleQuestions(questions, random = Math.random) {
+  const shuffled = [...questions];
+
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(random() * (index + 1));
+    [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+  }
+
+  return shuffled;
+}
+
 export function getCurrentQuestion(session) {
   return session.questions[session.currentIndex] ?? null;
 }

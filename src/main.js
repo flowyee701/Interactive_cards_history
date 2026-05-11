@@ -3,7 +3,8 @@ import {
   createQuizSession,
   filterQuestions,
   getSessionStats,
-  goToNextQuestion
+  goToNextQuestion,
+  shuffleQuestions
 } from "./core/quizEngine.js";
 import { loadQuestions } from "./services/questionRepository.js";
 import { getBestScore, saveBestScore } from "./services/storage.js";
@@ -12,7 +13,8 @@ import {
   createQuizView,
   playCardChange,
   renderPeriodOptions,
-  renderSession
+  renderSession,
+  renderStartScreen
 } from "./ui/quizView.js";
 
 const view = createQuizView();
@@ -20,8 +22,10 @@ const view = createQuizView();
 let allQuestions = [];
 let activePeriod = "all";
 let session = createQuizSession([]);
-let bestScore = getBestScore();
+let bestScore = getBestScore(activePeriod);
 let isTransitioning = false;
+let hasStarted = false;
+let shuffleEnabled = true;
 
 init();
 
@@ -31,13 +35,14 @@ async function init() {
     const periods = [...new Set(allQuestions.map((question) => question.period))].sort();
 
     renderPeriodOptions(view, periods);
-    resetSession();
+    renderStart();
 
     bindQuizEvents(view, {
       onAnswer: handleAnswer,
       onNext: handleNext,
-      onRestart: resetSession,
-      onPeriodChange: handlePeriodChange
+      onRestart: handleRestart,
+      onPeriodChange: handlePeriodChange,
+      onShuffleChange: handleShuffleChange
     });
   } catch (error) {
     renderLoadError(error);
@@ -45,12 +50,12 @@ async function init() {
 }
 
 function handleAnswer(answer) {
-  if (isTransitioning) {
+  if (isTransitioning || !hasStarted) {
     return;
   }
 
   session = answerCurrentQuestion(session, answer);
-  bestScore = saveBestScore(session.score);
+  bestScore = saveBestScore(session.score, activePeriod);
   render();
 }
 
@@ -59,8 +64,13 @@ function handleNext() {
     return;
   }
 
+  if (!hasStarted) {
+    transitionTo(() => startSession());
+    return;
+  }
+
   if (session.isComplete) {
-    transitionTo(() => resetSession());
+    transitionTo(() => startSession());
     return;
   }
 
@@ -80,18 +90,49 @@ function handlePeriodChange(period) {
   }
 
   activePeriod = period;
-  transitionTo(() => resetSession());
+  hasStarted = false;
+  transitionTo(() => renderStart());
 }
 
-function resetSession() {
+function handleRestart() {
+  if (isTransitioning) {
+    return;
+  }
+
+  hasStarted = false;
+  transitionTo(() => renderStart());
+}
+
+function handleShuffleChange(enabled) {
+  shuffleEnabled = enabled;
+
+  if (!hasStarted) {
+    renderStart();
+  }
+}
+
+function startSession() {
+  hasStarted = true;
   const questions = filterQuestions(allQuestions, activePeriod);
-  session = createQuizSession(questions);
+  session = createQuizSession(shuffleEnabled ? shuffleQuestions(questions) : questions);
   render();
+}
+
+function renderStart() {
+  const questions = filterQuestions(allQuestions, activePeriod);
+  session = createQuizSession([]);
+  bestScore = getBestScore(activePeriod);
+  renderStartScreen(view, {
+    period: activePeriod,
+    total: questions.length,
+    bestScore,
+    shuffleEnabled
+  });
 }
 
 function render() {
   const stats = getSessionStats(session);
-  bestScore = saveBestScore(session.score);
+  bestScore = saveBestScore(session.score, activePeriod);
   renderSession(view, session, stats, bestScore);
 }
 
@@ -104,13 +145,11 @@ function transitionTo(updateContent) {
 }
 
 function renderLoadError(error) {
-  view.question.textContent = "Не получилось загрузить карточки.";
-  view.periodLabel.textContent = "Ошибка";
-  view.difficulty.textContent = "данные";
-  view.sessionTitle.textContent = "Проверь данные";
+  view.question.textContent = "Could not load the cards.";
+  view.periodLabel.textContent = "Error";
+  view.difficulty.textContent = "data";
+  view.sessionTitle.textContent = "Check the data";
   view.sessionNote.textContent = error.message;
-  view.answerButtons.forEach((button) => {
-    button.disabled = true;
-  });
+  view.answerBar.replaceChildren();
   view.nextButton.disabled = true;
 }

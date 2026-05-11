@@ -1,102 +1,818 @@
 [
   {
-    "id": "ussr-life-001",
-    "type": "true_false",
-    "period": "1950-е",
-    "question": "Коммунальная квартира обычно означала, что несколько семей делили кухню, коридор и санузел.",
-    "answer": true,
-    "explanation": "Коммуналки были заметной частью городского быта: у семьи могла быть отдельная комната, а общие пространства использовали по расписанию или договоренности.",
+    "id": "user-quiz-001",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "What was the name of the standardized small kitchen appliance found in almost every Soviet household for making carbonated water at home?",
+    "options": [
+      { "id": "a", "label": "Seltzer bottle" },
+      { "id": "b", "label": "Siphon" },
+      { "id": "c", "label": "Gazvodka" },
+      { "id": "d", "label": "Sparkler" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Siphon. It was used at home to make carbonated water.",
     "difficulty": "easy",
-    "tags": ["жилье", "город", "быт"]
+    "tags": ["household", "food", "appliance"]
   },
   {
-    "id": "ussr-life-002",
-    "type": "true_false",
-    "period": "1960-е",
-    "question": "В 1960-е большинство городских семей уже имело личный автомобиль.",
-    "answer": false,
-    "explanation": "Личный автомобиль оставался дорогой и дефицитной покупкой. Для обычной городской семьи куда привычнее были трамвай, автобус, метро или электричка.",
+    "id": "user-quiz-002",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "Which dairy product, sold in a distinctive trihedral paper carton, was a staple of Soviet school breakfasts?",
+    "options": [
+      { "id": "a", "label": "Kefir" },
+      { "id": "b", "label": "Ryazhenka" },
+      { "id": "c", "label": "Snezhok (sweet yogurt drink)" },
+      { "id": "d", "label": "Varenets" }
+    ],
+    "answer": "c",
+    "explanation": "The correct answer is Snezhok, a sweet dairy drink associated with school breakfasts and Soviet food culture.",
     "difficulty": "easy",
-    "tags": ["транспорт", "город", "дефицит"]
+    "tags": ["school", "food", "dairy"]
   },
   {
-    "id": "ussr-life-003",
-    "type": "true_false",
-    "period": "1960-е",
-    "question": "Хрущевки часто имели небольшие кухни и типовые планировки, зато давали семьям шанс переехать из коммуналок в отдельную квартиру.",
-    "answer": true,
-    "explanation": "Массовое типовое строительство делало квартиры компактными, но отдельное жилье воспринималось как большой шаг вперед по сравнению с коммунальным бытом.",
+    "id": "user-quiz-003",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "What was the typical nickname for the tiny studios in \"hotel-type\" dormitories built for single workers and young families in the 1970s?",
+    "options": [
+      { "id": "a", "label": "Malosemeyka" },
+      { "id": "b", "label": "Khrushchevka" },
+      { "id": "c", "label": "Kommunalka" },
+      { "id": "d", "label": "Obshchezhitie" }
+    ],
+    "answer": "a",
+    "explanation": "The correct answer is Malosemeyka, a common nickname for very small apartments intended for single people or young families.",
     "difficulty": "medium",
-    "tags": ["жилье", "семья", "город"]
+    "tags": ["housing", "1970s", "family"]
   },
   {
-    "id": "ussr-life-004",
-    "type": "true_false",
-    "period": "1970-е",
-    "question": "Иностранные джинсы можно было свободно купить почти в любом обычном государственном магазине.",
-    "answer": false,
-    "explanation": "Импортная одежда часто была дефицитом. Джинсы могли доставать через знакомых, комиссионные магазины, фарцовщиков или редкие торговые каналы.",
-    "difficulty": "easy",
-    "tags": ["одежда", "дефицит", "молодежь"]
-  },
-  {
-    "id": "ussr-life-005",
-    "type": "true_false",
-    "period": "1970-е",
-    "question": "Прописка связывала человека с конкретным местом проживания и могла влиять на работу, учебу и получение жилья.",
-    "answer": true,
-    "explanation": "Регистрация по месту жительства была важной административной частью повседневности и могла ограничивать свободный переезд в крупные города.",
+    "id": "user-quiz-004",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "Which product, sold in a yellow-and-brown cardboard box, was the Soviet equivalent of instant coffee and was widely despised for its taste?",
+    "options": [
+      { "id": "a", "label": "Arabica granules" },
+      { "id": "b", "label": "Zolotoy Kolos (grain drink)" },
+      { "id": "c", "label": "Real coffee brand" },
+      { "id": "d", "label": "Cofeemix" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Zolotoy Kolos, a grain-based drink often remembered as a poor substitute for coffee.",
     "difficulty": "medium",
-    "tags": ["документы", "город", "работа"]
+    "tags": ["food", "drink", "consumer goods"]
   },
   {
-    "id": "ussr-life-006",
-    "type": "true_false",
-    "period": "1970-е",
-    "question": "Субботник был формой коллективной работы: люди могли убирать территорию, сажать деревья или помогать учреждению.",
-    "answer": true,
-    "explanation": "Субботники подавались как общественно полезная инициатива, но на практике участие нередко ожидалось коллективом школы, завода или учреждения.",
-    "difficulty": "easy",
-    "tags": ["работа", "школа", "общество"]
-  },
-  {
-    "id": "ussr-life-007",
-    "type": "true_false",
-    "period": "1980-е",
-    "question": "Очереди в магазинах могли быть частью обычного опыта покупателя, особенно когда появлялся дефицитный товар.",
-    "answer": true,
-    "explanation": "Покупки часто зависели не только от денег, но и от наличия товара. Новость о поставке могла быстро собрать длинную очередь.",
-    "difficulty": "easy",
-    "tags": ["магазины", "дефицит", "быт"]
-  },
-  {
-    "id": "ussr-life-008",
-    "type": "true_false",
-    "period": "1980-е",
-    "question": "Все квартиры свободно продавались и покупались на открытом рынке так же, как в современной рыночной экономике.",
-    "answer": false,
-    "explanation": "Жилье в основном распределялось через государство, ведомства или кооперативы. Распространенной практикой был обмен квартир с оформлением через официальные процедуры.",
+    "id": "user-quiz-005",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "In Soviet playgrounds, what material was used to make the hot, metal \"pyramid\" climbing frames and roundabouts that often injured children?",
+    "options": [
+      { "id": "a", "label": "Stainless steel" },
+      { "id": "b", "label": "Aluminum" },
+      { "id": "c", "label": "Unpainted cast iron or ferrous metal" },
+      { "id": "d", "label": "Plastic coating" }
+    ],
+    "answer": "c",
+    "explanation": "The correct answer is unpainted cast iron or ferrous metal, the kind of heavy metal construction associated with old Soviet playground equipment.",
     "difficulty": "medium",
-    "tags": ["жилье", "экономика", "город"]
+    "tags": ["children", "playground", "city"]
   },
   {
-    "id": "ussr-life-009",
-    "type": "true_false",
-    "period": "1980-е",
-    "question": "Дача для многих семей была не только местом отдыха, но и способом выращивать овощи, ягоды и делать заготовки.",
-    "answer": true,
-    "explanation": "Дачный участок помогал разнообразить питание и давал пространство для семейного отдыха, особенно летом и в выходные.",
+    "id": "user-quiz-006",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "The \"Book of Tasty and Healthy Food\" recommended a particular salad for holidays. Which one became a staple of Soviet New Year tables?",
+    "options": [
+      { "id": "a", "label": "Vinegret" },
+      { "id": "b", "label": "Herring under a fur coat (Shuba)" },
+      { "id": "c", "label": "Olivier salad (Salyat Olivier)" },
+      { "id": "d", "label": "Mimosa salad" }
+    ],
+    "answer": "c",
+    "explanation": "The correct answer is Olivier salad, one of the most recognizable dishes of the Soviet New Year table.",
     "difficulty": "easy",
-    "tags": ["дача", "еда", "семья"]
+    "tags": ["food", "holiday", "new year"]
   },
   {
-    "id": "ussr-life-010",
-    "type": "true_false",
-    "period": "1950-е",
-    "question": "Телевизор сразу после войны был обычной вещью почти в каждой советской квартире.",
-    "answer": false,
-    "explanation": "Телевидение распространялось постепенно. В 1950-е телевизор еще оставался заметной покупкой, и смотреть передачи могли ходить к соседям или в клуб.",
+    "id": "user-quiz-007",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "What did Soviet shoppers call empty glass jars of a standard size that were used as currency to buy loose vodka in the 1970s-80s?",
+    "options": [
+      { "id": "a", "label": "Stakan" },
+      { "id": "b", "label": "Banka" },
+      { "id": "c", "label": "Butylkooborot (bottle-deposit jar)" },
+      { "id": "d", "label": "Tara" }
+    ],
+    "answer": "c",
+    "explanation": "The correct answer is Butylkooborot, referring to the bottle-return or deposit circulation around glass containers.",
+    "difficulty": "hard",
+    "tags": ["shopping", "1970s", "1980s"]
+  },
+  {
+    "id": "user-quiz-008",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "Which type of floor covering was most common in Soviet apartments in the 1960s-70s, made of small interlocking planks?",
+    "options": [
+      { "id": "a", "label": "Linoleum" },
+      { "id": "b", "label": "Carpet tiles" },
+      { "id": "c", "label": "PVC tiles" },
+      { "id": "d", "label": "Parquet board (shpalty) / plank parquet" }
+    ],
+    "answer": "d",
+    "explanation": "The correct answer is parquet board or plank parquet, a common floor covering in Soviet apartments of that period.",
     "difficulty": "medium",
-    "tags": ["техника", "досуг", "семья"]
+    "tags": ["housing", "apartment", "interior"]
+  },
+  {
+    "id": "user-quiz-009",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "What was the universal Soviet adhesive meant for fixing everything from shoes to children's toys, stored in a tiny glass bottle and smelling of acetone?",
+    "options": [
+      { "id": "a", "label": "PVA glue" },
+      { "id": "b", "label": "Moment glue" },
+      { "id": "c", "label": "BF-6 medical glue" },
+      { "id": "d", "label": "Silicone sealant" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Moment glue, a strong household adhesive widely associated with repairs.",
+    "difficulty": "easy",
+    "tags": ["household", "repair", "consumer goods"]
+  },
+  {
+    "id": "user-quiz-010",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "In a typical Soviet school, what was the name of the student on \"duty\" who checked collar cleanliness and hair length?",
+    "options": [
+      { "id": "a", "label": "Kommissar" },
+      { "id": "b", "label": "Starshiy uchenik" },
+      { "id": "c", "label": "Dezhurniy (or sanitarniy dezhurniy)" },
+      { "id": "d", "label": "Prefect" }
+    ],
+    "answer": "c",
+    "explanation": "The correct answer is Dezhurniy, or sanitary duty student, who could be assigned to check cleanliness and order.",
+    "difficulty": "easy",
+    "tags": ["school", "children", "discipline"]
+  },
+  {
+    "id": "user-quiz-011",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "What did the abbreviation \"BOMZH\" originally mean in Soviet official documents (not the later slang for homeless)?",
+    "options": [
+      { "id": "a", "label": "Homeless person" },
+      { "id": "b", "label": "Without a Fixed Place of Residence (BOMZH: bez opredelyonnogo mesta zhitelstva)" },
+      { "id": "c", "label": "Wanderer" },
+      { "id": "d", "label": "Parasitism suspect" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is without a fixed place of residence: bez opredelyonnogo mesta zhitelstva.",
+    "difficulty": "medium",
+    "tags": ["documents", "language", "society"]
+  },
+  {
+    "id": "user-quiz-012",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "Which fruit compote was most commonly served in Soviet factory canteens and kindergartens, made from dried apples?",
+    "options": [
+      { "id": "a", "label": "Cherry compote" },
+      { "id": "b", "label": "Apricot compote" },
+      { "id": "c", "label": "Uzvar (dried apple compote)" },
+      { "id": "d", "label": "Mixed berry kisel" }
+    ],
+    "answer": "c",
+    "explanation": "The correct answer is uzvar, a compote made from dried apples and other dried fruit.",
+    "difficulty": "easy",
+    "tags": ["food", "canteen", "kindergarten"]
+  },
+  {
+    "id": "user-quiz-013",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "Soviet synthetic rubber \"galoshes\" were worn not only in rain. For what secondary purpose were they widely used?",
+    "options": [
+      { "id": "a", "label": "As flower pots" },
+      { "id": "b", "label": "As protective overshoes for winter boots" },
+      { "id": "c", "label": "As swimming fins" },
+      { "id": "d", "label": "As matryoshka blanks" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is protective overshoes for winter boots, helping keep footwear cleaner and drier.",
+    "difficulty": "easy",
+    "tags": ["clothing", "winter", "household"]
+  },
+  {
+    "id": "user-quiz-014",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "In the courtyard culture of 1970s-80s USSR, what did the game \"Rubber band\" involve?",
+    "options": [
+      { "id": "a", "label": "A slingshot" },
+      { "id": "b", "label": "A piece of bicycle inner tube stretched between two players' ankles" },
+      { "id": "c", "label": "A spring-loaded toy" },
+      { "id": "d", "label": "A rubber stamp collector" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is a piece of rubber stretched between two players' ankles while another player jumped through patterns.",
+    "difficulty": "easy",
+    "tags": ["children", "games", "courtyard"]
+  },
+  {
+    "id": "user-quiz-015",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "What was the name of the standardized three-liter glass jar used throughout the USSR for preserving cucumbers, tomatoes, and mushrooms?",
+    "options": [
+      { "id": "a", "label": "Litrovaya banka" },
+      { "id": "b", "label": "Poltorashka" },
+      { "id": "c", "label": "Tryokhlitrovka" },
+      { "id": "d", "label": "Jar" }
+    ],
+    "answer": "c",
+    "explanation": "The correct answer is Tryokhlitrovka, the standard three-liter jar used for home preserving.",
+    "difficulty": "easy",
+    "tags": ["food", "preserving", "household"]
+  },
+  {
+    "id": "user-quiz-016",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "By what nickname was the Soviet artist Oleg Popov known?",
+    "options": [
+      { "id": "a", "label": "The Sunshine Clown" },
+      { "id": "b", "label": "The Happy Clown" },
+      { "id": "c", "label": "The Sunny Jester" },
+      { "id": "d", "label": "The Laughing Sun" }
+    ],
+    "answer": "a",
+    "explanation": "The correct answer is The Sunshine Clown, the nickname associated with Soviet circus artist Oleg Popov.",
+    "difficulty": "easy",
+    "tags": ["culture", "circus", "people"]
+  },
+  {
+    "id": "user-quiz-017",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "What was the name of the car that became the \"people's car\" of the Soviet Union and was the most affordable vehicle of its era, and was also nicknamed \"humpbacked\" because of its shape?",
+    "options": [
+      { "id": "a", "label": "Moskvich" },
+      { "id": "b", "label": "Lada" },
+      { "id": "c", "label": "Zaporozhets" },
+      { "id": "d", "label": "Chaika" }
+    ],
+    "answer": "c",
+    "explanation": "The correct answer is Zaporozhets, especially associated with the nickname \"humpbacked\" because of its shape.",
+    "difficulty": "easy",
+    "tags": ["transport", "cars", "everyday life"]
+  },
+  {
+    "id": "user-quiz-018",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "Which US president was given a puppy of the Soviet cosmonaut dog Strelka?",
+    "options": [
+      { "id": "a", "label": "Lyndon Johnson" },
+      { "id": "b", "label": "John Kennedy" },
+      { "id": "c", "label": "Dwight Eisenhower" },
+      { "id": "d", "label": "Richard Nixon" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is John Kennedy, who received a puppy connected to the Soviet space dog Strelka.",
+    "difficulty": "medium",
+    "tags": ["space", "cold war", "people"]
+  },
+  {
+    "id": "user-quiz-019",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "Which agricultural crop in the Soviet Union was called the \"queen of the fields\"?",
+    "options": [
+      { "id": "a", "label": "Wheat" },
+      { "id": "b", "label": "Corn" },
+      { "id": "c", "label": "Potatoes" },
+      { "id": "d", "label": "Sunflowers" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is corn, famously promoted in Soviet agricultural campaigns as the \"queen of the fields\".",
+    "difficulty": "easy",
+    "tags": ["agriculture", "food", "soviet campaigns"]
+  },
+  {
+    "id": "user-quiz-020",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "What was the name of the Soviet TV show, which became a special symbol of various holidays and especially the new year, and which still exists today?",
+    "options": [
+      { "id": "a", "label": "Little Blue Light" },
+      { "id": "b", "label": "Little Red Spark" },
+      { "id": "c", "label": "Little Green Flame" },
+      { "id": "d", "label": "Little White Star" }
+    ],
+    "answer": "a",
+    "explanation": "The correct answer is Little Blue Light, a holiday TV show especially associated with New Year celebrations.",
+    "difficulty": "easy",
+    "tags": ["television", "holiday", "new year"]
+  },
+  {
+    "id": "user-quiz-021",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "Which Soviet poet was sent into exile for social parasitism in the Arkhangelsk region?",
+    "options": [
+      { "id": "a", "label": "Anna Akhmatova" },
+      { "id": "b", "label": "Osip Mandelstam" },
+      { "id": "c", "label": "Boris Pasternak" },
+      { "id": "d", "label": "Joseph Brodsky" }
+    ],
+    "answer": "d",
+    "explanation": "The correct answer is Joseph Brodsky, who was sentenced to exile after a trial for social parasitism.",
+    "difficulty": "medium",
+    "tags": ["literature", "people", "society"]
+  },
+  {
+    "id": "user-quiz-022",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "In what year was Bulgakov's novel \"The Master and Margarita\" first published in the USSR?",
+    "options": [
+      { "id": "a", "label": "1973" },
+      { "id": "b", "label": "1967" },
+      { "id": "c", "label": "1940" },
+      { "id": "d", "label": "1980" }
+    ],
+    "answer": "a",
+    "explanation": "The correct answer is 1973.",
+    "difficulty": "medium",
+    "tags": ["literature", "publication", "culture"]
+  },
+  {
+    "id": "user-quiz-023",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "What was the name of those in the USSR who often changed jobs, running from company to company?",
+    "options": [
+      { "id": "a", "label": "The drifters (Skitaltsy)" },
+      { "id": "b", "label": "The jumpers (Pryguny)" },
+      { "id": "c", "label": "The flyers (Letuni)" },
+      { "id": "d", "label": "The dudes (Stilyagi)" }
+    ],
+    "answer": "c",
+    "explanation": "The correct answer is The flyers (Letuni), a term used for people who frequently moved from one workplace to another.",
+    "difficulty": "medium",
+    "tags": ["work", "language", "society"]
+  },
+  {
+    "id": "user-quiz-024",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "What was customary in the Soviet Union to celebrate Lenin's birthday?",
+    "options": [
+      { "id": "a", "label": "Subbotnik (cleaning day)" },
+      { "id": "b", "label": "Concerts" },
+      { "id": "c", "label": "Parades" },
+      { "id": "d", "label": "Pioneer rally (pionersky sbor)" }
+    ],
+    "answer": "a",
+    "explanation": "The correct answer is Subbotnik, a collective cleaning or public work day.",
+    "difficulty": "easy",
+    "tags": ["society", "work", "political culture"]
+  },
+  {
+    "id": "user-quiz-025",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "What was the name of the Soviet cosmonaut who was the second in the world to fly into space?",
+    "options": [
+      { "id": "a", "label": "Valery Fyodorovich Bykovsky" },
+      { "id": "b", "label": "Gherman Stepanovich Titov" },
+      { "id": "c", "label": "Pavel Romanovich Popovich" },
+      { "id": "d", "label": "Andriyan Grigoryevich Nikolayev" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Gherman Stepanovich Titov, the second person to orbit Earth.",
+    "difficulty": "easy",
+    "tags": ["space", "people", "cosmonauts"]
+  },
+  {
+    "id": "user-quiz-026",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "What kind of material looked like chewing gum, which is why Soviet children loved to chew it?",
+    "options": [
+      { "id": "a", "label": "Tar (gudron)" },
+      { "id": "b", "label": "Concrete block (shlacko-block)" },
+      { "id": "c", "label": "Glass wool (steklovata)" },
+      { "id": "d", "label": "Pitch" }
+    ],
+    "answer": "a",
+    "explanation": "The correct answer is tar (gudron), remembered by some children as something that looked like chewing gum.",
+    "difficulty": "medium",
+    "tags": ["children", "everyday life", "materials"]
+  },
+  {
+    "id": "user-quiz-027",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "What was the name of the network of currency-only stores in the USSR where goods were sold for checks rather than ordinary rubles?",
+    "options": [
+      { "id": "a", "label": "Vesna" },
+      { "id": "b", "label": "Beryozka" },
+      { "id": "c", "label": "Kashtan" },
+      { "id": "d", "label": "Ryabina" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Beryozka.",
+    "difficulty": "medium",
+    "tags": ["stores", "currency", "consumer goods"]
+  },
+  {
+    "id": "user-quiz-028",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "What did Soviet people call literature published abroad and illegally brought into the country?",
+    "options": [
+      { "id": "a", "label": "Samizdat" },
+      { "id": "b", "label": "Spetskhran" },
+      { "id": "c", "label": "Tamizdat" },
+      { "id": "d", "label": "Magnitizdat" }
+    ],
+    "answer": "c",
+    "explanation": "The correct answer is Tamizdat.",
+    "difficulty": "medium",
+    "tags": ["literature", "censorship", "culture"]
+  },
+  {
+    "id": "user-quiz-029",
+    "type": "multiple_choice",
+    "period": "1980s",
+    "question": "What was the nickname of Mikhail Gorbachev's anti-alcohol campaign of 1985-1987?",
+    "options": [
+      { "id": "a", "label": "Sober Spring" },
+      { "id": "b", "label": "Bitter Truth" },
+      { "id": "c", "label": "Dry Law" },
+      { "id": "d", "label": "Alcohol-Free Five-Year Plan" }
+    ],
+    "answer": "c",
+    "explanation": "The correct answer is Dry Law.",
+    "difficulty": "easy",
+    "tags": ["1980s", "policy", "everyday life"]
+  },
+  {
+    "id": "user-quiz-030",
+    "type": "multiple_choice",
+    "period": "1920s",
+    "question": "What did people in the 1920s call a communal apartment with one kitchen and shared neighbors?",
+    "options": [
+      { "id": "a", "label": "Dormitory" },
+      { "id": "b", "label": "Kommunalka" },
+      { "id": "c", "label": "Barrack" },
+      { "id": "d", "label": "Uplotneniye" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Kommunalka.",
+    "difficulty": "easy",
+    "tags": ["1920s", "housing", "everyday life"]
+  },
+  {
+    "id": "user-quiz-031",
+    "type": "multiple_choice",
+    "period": "1920s",
+    "question": "What was often used as a sugar substitute in the 1920s because sugar was expensive?",
+    "options": [
+      { "id": "a", "label": "Honey" },
+      { "id": "b", "label": "Molasses" },
+      { "id": "c", "label": "Saccharin" },
+      { "id": "d", "label": "Condensed milk" }
+    ],
+    "answer": "c",
+    "explanation": "The correct answer is Saccharin.",
+    "difficulty": "easy",
+    "tags": ["1920s", "food", "shortage"]
+  },
+  {
+    "id": "user-quiz-032",
+    "type": "multiple_choice",
+    "period": "1920s",
+    "question": "What did peasants receive in the kolkhoz instead of a salary in the 1920s-1930s?",
+    "options": [
+      { "id": "a", "label": "Bonds" },
+      { "id": "b", "label": "Workdays (Trudodni)" },
+      { "id": "c", "label": "Meal tickets" },
+      { "id": "d", "label": "Receipts" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Workdays (Trudodni).",
+    "difficulty": "medium",
+    "tags": ["1920s", "1930s", "agriculture"]
+  },
+  {
+    "id": "user-quiz-033",
+    "type": "multiple_choice",
+    "period": "1930s",
+    "question": "What sparkling wine became the main decoration of the Soviet holiday table in the 1930s?",
+    "options": [
+      { "id": "a", "label": "Rkatsiteli" },
+      { "id": "b", "label": "Soviet Champagne" },
+      { "id": "c", "label": "Tsinandali" },
+      { "id": "d", "label": "Port wine" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Soviet Champagne.",
+    "difficulty": "easy",
+    "tags": ["1930s", "food", "holiday"]
+  },
+  {
+    "id": "user-quiz-034",
+    "type": "multiple_choice",
+    "period": "1930s",
+    "question": "Which perfume became a symbol of female elegance in the 1930s?",
+    "options": [
+      { "id": "a", "label": "Silver Lily of the Valley" },
+      { "id": "b", "label": "Red Moscow" },
+      { "id": "c", "label": "White Lilac" },
+      { "id": "d", "label": "Carmen" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Red Moscow.",
+    "difficulty": "easy",
+    "tags": ["1930s", "fashion", "consumer goods"]
+  },
+  {
+    "id": "user-quiz-035",
+    "type": "multiple_choice",
+    "period": "1940s",
+    "question": "What small metal stove, which saved lives during the war, was called a \"time stove\"?",
+    "options": [
+      { "id": "a", "label": "Burzhuika" },
+      { "id": "b", "label": "Kerosinka" },
+      { "id": "c", "label": "Primus" },
+      { "id": "d", "label": "Kaganets" }
+    ],
+    "answer": "a",
+    "explanation": "The correct answer is Burzhuika.",
+    "difficulty": "medium",
+    "tags": ["1940s", "war", "household"]
+  },
+  {
+    "id": "user-quiz-036",
+    "type": "multiple_choice",
+    "period": "1940s",
+    "question": "What formed the basis of the siege ration by ration cards in Leningrad?",
+    "options": [
+      { "id": "a", "label": "Bread" },
+      { "id": "b", "label": "Canned meat" },
+      { "id": "c", "label": "Pasta" },
+      { "id": "d", "label": "Kasha" }
+    ],
+    "answer": "a",
+    "explanation": "The correct answer is Bread.",
+    "difficulty": "easy",
+    "tags": ["1940s", "war", "food"]
+  },
+  {
+    "id": "user-quiz-037",
+    "type": "multiple_choice",
+    "period": "1940s",
+    "question": "What was folded into a triangle and sent to and from the front?",
+    "options": [
+      { "id": "a", "label": "A newspaper" },
+      { "id": "b", "label": "A letter" },
+      { "id": "c", "label": "A gift parcel" },
+      { "id": "d", "label": "A map" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is A letter.",
+    "difficulty": "easy",
+    "tags": ["1940s", "war", "communication"]
+  },
+  {
+    "id": "user-quiz-038",
+    "type": "multiple_choice",
+    "period": "1940s",
+    "question": "What did people call the \"black plate\" used to listen to Sovinformburo reports?",
+    "options": [
+      { "id": "a", "label": "Gramophone" },
+      { "id": "b", "label": "Loudspeaker (reproduktor)" },
+      { "id": "c", "label": "Telephone" },
+      { "id": "d", "label": "Radio console" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Loudspeaker (reproduktor).",
+    "difficulty": "medium",
+    "tags": ["1940s", "war", "media"]
+  },
+  {
+    "id": "user-quiz-039",
+    "type": "multiple_choice",
+    "period": "1950s",
+    "question": "What household appliance began to massively enter homes and change family leisure in the 1950s?",
+    "options": [
+      { "id": "a", "label": "Refrigerator" },
+      { "id": "b", "label": "Television" },
+      { "id": "c", "label": "Washing machine" },
+      { "id": "d", "label": "Vacuum cleaner" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Television.",
+    "difficulty": "easy",
+    "tags": ["1950s", "television", "family"]
+  },
+  {
+    "id": "user-quiz-040",
+    "type": "multiple_choice",
+    "period": "1950s",
+    "question": "What shoes with a thick white sole were the ultimate dream of \"stilyagi\"?",
+    "options": [
+      { "id": "a", "label": "Sandals" },
+      { "id": "b", "label": "Shoes on \"semolina porridge\" sole" },
+      { "id": "c", "label": "Goodbye-youth boots" },
+      { "id": "d", "label": "Felt boots" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Shoes on \"semolina porridge\" sole.",
+    "difficulty": "medium",
+    "tags": ["1950s", "fashion", "youth"]
+  },
+  {
+    "id": "user-quiz-041",
+    "type": "multiple_choice",
+    "period": "1950s",
+    "question": "What was the name of the first small-sized apartments with a combined bathroom in the 1950s-1960s?",
+    "options": [
+      { "id": "a", "label": "Small-family apartments" },
+      { "id": "b", "label": "Khrushchevkas" },
+      { "id": "c", "label": "Stalinkas" },
+      { "id": "d", "label": "Cottages" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Khrushchevkas.",
+    "difficulty": "easy",
+    "tags": ["1950s", "1960s", "housing"]
+  },
+  {
+    "id": "user-quiz-042",
+    "type": "multiple_choice",
+    "period": "1960s",
+    "question": "What drink was sold in vending machines for 3 kopecks (with syrup) and 1 kopeck (without)?",
+    "options": [
+      { "id": "a", "label": "Kvass" },
+      { "id": "b", "label": "Buratino lemonade" },
+      { "id": "c", "label": "Carbonated water" },
+      { "id": "d", "label": "Juice" }
+    ],
+    "answer": "c",
+    "explanation": "The correct answer is Carbonated water.",
+    "difficulty": "easy",
+    "tags": ["1960s", "drink", "vending machines"]
+  },
+  {
+    "id": "user-quiz-043",
+    "type": "multiple_choice",
+    "period": "1960s",
+    "question": "What device did children use to watch filmstrips on the wall?",
+    "options": [
+      { "id": "a", "label": "Movie projector" },
+      { "id": "b", "label": "Diascope" },
+      { "id": "c", "label": "Filmoscope" },
+      { "id": "d", "label": "Epidiascope" }
+    ],
+    "answer": "c",
+    "explanation": "The correct answer is Filmoscope.",
+    "difficulty": "easy",
+    "tags": ["1960s", "children", "leisure"]
+  },
+  {
+    "id": "user-quiz-044",
+    "type": "multiple_choice",
+    "period": "1960s",
+    "question": "What hairstyle with backcombing was fashionable among women in the 1960s?",
+    "options": [
+      { "id": "a", "label": "Bob" },
+      { "id": "b", "label": "Babette" },
+      { "id": "c", "label": "Bun" },
+      { "id": "d", "label": "Braid" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Babette.",
+    "difficulty": "easy",
+    "tags": ["1960s", "fashion", "women"]
+  },
+  {
+    "id": "user-quiz-045",
+    "type": "multiple_choice",
+    "period": "1970s",
+    "question": "What woven bag was an essential attribute in case of sudden shortages in the 1970s?",
+    "options": [
+      { "id": "a", "label": "Backpack" },
+      { "id": "b", "label": "Avoska" },
+      { "id": "c", "label": "Briefcase" },
+      { "id": "d", "label": "Plastic bag" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Avoska.",
+    "difficulty": "easy",
+    "tags": ["1970s", "shortage", "shopping"]
+  },
+  {
+    "id": "user-quiz-046",
+    "type": "multiple_choice",
+    "period": "1970s",
+    "question": "What was \"varenyka\" in a 1970s wardrobe?",
+    "options": [
+      { "id": "a", "label": "Knitted sweater" },
+      { "id": "b", "label": "Jeans boiled with bleach" },
+      { "id": "c", "label": "Linen dress" },
+      { "id": "d", "label": "Wide breeches" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Jeans boiled with bleach.",
+    "difficulty": "medium",
+    "tags": ["1970s", "fashion", "youth"]
+  },
+  {
+    "id": "user-quiz-047",
+    "type": "multiple_choice",
+    "period": "1970s",
+    "question": "What juice in a three-liter jar stood on the balcony of almost every family in the 1970s?",
+    "options": [
+      { "id": "a", "label": "Apple" },
+      { "id": "b", "label": "Birch" },
+      { "id": "c", "label": "Tomato" },
+      { "id": "d", "label": "Grape" }
+    ],
+    "answer": "c",
+    "explanation": "The correct answer is Tomato.",
+    "difficulty": "easy",
+    "tags": ["1970s", "food", "household"]
+  },
+  {
+    "id": "user-quiz-048",
+    "type": "multiple_choice",
+    "period": "1980s",
+    "question": "What chewing gum with stickers became a cult item for Soviet children in the 1980s?",
+    "options": [
+      { "id": "a", "label": "Orbit" },
+      { "id": "b", "label": "Turbo" },
+      { "id": "c", "label": "Lyubimaya" },
+      { "id": "d", "label": "Donald" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Turbo.",
+    "difficulty": "easy",
+    "tags": ["1980s", "children", "consumer goods"]
+  },
+  {
+    "id": "user-quiz-049",
+    "type": "multiple_choice",
+    "period": "1980s",
+    "question": "Where did teenagers watch banned Western movies in the 1980s?",
+    "options": [
+      { "id": "a", "label": "Cinema" },
+      { "id": "b", "label": "Video salon" },
+      { "id": "c", "label": "Cafe" },
+      { "id": "d", "label": "House of culture" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Video salon.",
+    "difficulty": "easy",
+    "tags": ["1980s", "film", "youth"]
+  },
+  {
+    "id": "user-quiz-050",
+    "type": "multiple_choice",
+    "period": "1980s",
+    "question": "What did the word \"blat\" mean in the 1980s?",
+    "options": [
+      { "id": "a", "label": "Speculation" },
+      { "id": "b", "label": "Useful connections" },
+      { "id": "c", "label": "Shortage" },
+      { "id": "d", "label": "Queue" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Useful connections.",
+    "difficulty": "easy",
+    "tags": ["1980s", "language", "society"]
+  },
+  {
+    "id": "user-quiz-051",
+    "type": "multiple_choice",
+    "period": "1980s",
+    "question": "What did children trade at school, collecting colorful paper pieces?",
+    "options": [
+      { "id": "a", "label": "Stamps" },
+      { "id": "b", "label": "Candy wrappers" },
+      { "id": "c", "label": "Calendar cards" },
+      { "id": "d", "label": "Labels" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is Candy wrappers.",
+    "difficulty": "easy",
+    "tags": ["1980s", "children", "school"]
   }
 ]
