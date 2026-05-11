@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-label="Everyday Soviet life collage">
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0v32" fill="none" stroke="#202326" stroke-opacity=".08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="720" height="520" fill="#fff8ea"/>
+  <rect width="720" height="520" fill="url(#grid)"/>
+  <circle cx="582" cy="112" r="72" fill="#ba2d2d" opacity=".18"/>
+  <circle cx="128" cy="408" r="96" fill="#2f847c" opacity=".16"/>
+  <path d="M120 126h170v122H120z" fill="#f9e5c1" stroke="#202326" stroke-width="8"/>
+  <path d="M205 126v122M120 187h170" stroke="#202326" stroke-width="6"/>
+  <path d="M110 262h190" stroke="#ba2d2d" stroke-width="10" stroke-linecap="round"/>
+  <path d="M384 174h172c25 0 45 20 45 45v82H339v-82c0-25 20-45 45-45z" fill="#2f847c" opacity=".9" stroke="#202326" stroke-width="8"/>
+  <circle cx="398" cy="244" r="32" fill="#fff8ea" stroke="#202326" stroke-width="7"/>
+  <circle cx="508" cy="244" r="32" fill="#fff8ea" stroke="#202326" stroke-width="7"/>
+  <path d="M375 332h206" stroke="#202326" stroke-width="12" stroke-linecap="round"/>
+  <path d="M424 332v52M532 332v52" stroke="#202326" stroke-width="10" stroke-linecap="round"/>
+  <path d="M116 334h146c24 0 44 20 44 44v26H72v-26c0-24 20-44 44-44z" fill="#d79b31" stroke="#202326" stroke-width="8"/>
+  <path d="M122 334v-58h132v58" fill="none" stroke="#202326" stroke-width="8"/>
+  <circle cx="252" cy="294" r="14" fill="#ba2d2d"/>
+  <path d="M418 100h116M476 62v116" stroke="#ba2d2d" stroke-width="10" stroke-linecap="round"/>
+</svg>

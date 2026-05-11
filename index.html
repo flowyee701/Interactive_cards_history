@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Интерактивные карточки по истории повседневной жизни в эпоху Советского союза."
+    />
+    <title>Интерактивная платформа для истории</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./src/main.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Интерактивная платформа для истории">
+          <span class="brand__mark" aria-hidden="true">
+            <img src="./assets/logo-history-platform.svg" alt="" />
+          </span>
+          <span>
+            <span class="brand__name">Интерактивная платформа для истории</span>
+            <span class="brand__caption">Карточки о повседневной жизни в СССР</span>
+          </span>
+        </a>
+
+        <div class="topbar__meta" aria-label="Статистика сессии">
+          <span class="metric">
+            <span class="metric__value" data-stat="score">0</span>
+            <span class="metric__label">счет</span>
+          </span>
+          <span class="metric">
+            <span class="metric__value" data-stat="streak">0</span>
+            <span class="metric__label">серия</span>
+          </span>
+          <span class="metric">
+            <span class="metric__value" data-stat="best">0</span>
+            <span class="metric__label">лучший</span>
+          </span>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="deck-panel" aria-label="Настройки подборки">
+          <div class="deck-panel__title">
+            <p class="eyebrow">Коллекция</p>
+            <h1>Обычный день в советскую эпоху</h1>
+          </div>
+
+          <label class="field" for="periodSelect">
+            <span>Период</span>
+            <select id="periodSelect" data-control="period" aria-label="Период">
+              <option value="all">Все периоды</option>
+            </select>
+          </label>
+
+          <div class="progress-block" aria-label="Прогресс">
+            <div class="progress-block__row">
+              <span data-progress-label>0 из 0</span>
+              <span data-accuracy>0%</span>
+            </div>
+            <div class="progress-track">
+              <span class="progress-track__fill" data-progress-fill></span>
+            </div>
+          </div>
+
+          <div class="timeline" data-periods></div>
+        </section>
+
+        <section class="study-stage" aria-live="polite">
+          <div class="visual-ribbon visual-ribbon--left" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <article class="flashcard" data-card>
+            <div class="flashcard__glow" aria-hidden="true"></div>
+            <div class="flashcard__stamp" aria-hidden="true"></div>
+            <div class="flashcard__content">
+              <div class="question-meta">
+                <span data-period-label>Период</span>
+                <span data-difficulty>mock</span>
+              </div>
+
+              <p class="question-text" data-question>
+                Загрузка карточек...
+              </p>
+
+              <div class="tag-list" data-tags></div>
+
+              <div class="result" data-result hidden>
+                <span class="result__badge" data-result-badge></span>
+                <p data-explanation></p>
+              </div>
+            </div>
+          </article>
+          <div class="visual-ribbon visual-ribbon--right" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="answer-bar" aria-label="Ответ">
+            <button class="answer-button answer-button--false" type="button" data-answer="false">
+              Ложь
+            </button>
+            <button class="answer-button answer-button--true" type="button" data-answer="true">
+              Правда
+            </button>
+          </div>
+
+          <div class="stage-actions">
+            <button class="ghost-button" type="button" data-action="restart">Сначала</button>
+            <button class="primary-button" type="button" data-action="next">Дальше</button>
+          </div>
+        </section>
+
+        <aside class="insight-panel" aria-label="Сводка">
+          <p class="eyebrow">Сессия</p>
+          <h2 data-session-title>Начало</h2>
+          <p data-session-note>
+            Выбери ответ, чтобы открыть пояснение и перейти к следующей карточке.
+          </p>
+          <div class="mini-grid">
+            <span>
+              <strong data-stat="answered">0</strong>
+              отвечено
+            </span>
+            <span>
+              <strong data-stat="remaining">0</strong>
+              осталось
+            </span>
+          </div>
+        </aside>
+      </main>
+    </div>
+  </body>
+</html>
