@@ -11,7 +11,7 @@ export function createCompetitionSession(questions, playerNames) {
     questions,
     players,
     currentIndex: 0,
-    currentPlayerIndex: 0,
+    currentPlayerIndex: getPlayerIndexForQuestion(0, players.length),
     lastAnswer: null,
     isComplete: questions.length === 0
   };
@@ -57,22 +57,12 @@ export function advanceCompetition(session) {
     return session;
   }
 
-  const nextPlayerIndex = session.currentPlayerIndex + 1;
-
-  if (nextPlayerIndex < session.players.length) {
-    return {
-      ...session,
-      currentPlayerIndex: nextPlayerIndex,
-      lastAnswer: null
-    };
-  }
-
   const nextQuestionIndex = session.currentIndex + 1;
 
   return {
     ...session,
     currentIndex: nextQuestionIndex,
-    currentPlayerIndex: 0,
+    currentPlayerIndex: getPlayerIndexForQuestion(nextQuestionIndex, session.players.length),
     lastAnswer: null,
     isComplete: nextQuestionIndex >= session.questions.length
   };
@@ -84,13 +74,11 @@ export function getCompetitionQuestion(session) {
 
 export function getCompetitionStats(session) {
   const total = session.questions.length;
-  const currentQuestionComplete =
-    Boolean(session.lastAnswer) && session.currentPlayerIndex === session.players.length - 1;
   const completedQuestions = Math.min(
-    session.currentIndex + (currentQuestionComplete || session.isComplete ? 1 : 0),
+    session.currentIndex + (session.lastAnswer || session.isComplete ? 1 : 0),
     total
   );
-  const totalTurns = total * session.players.length;
+  const totalTurns = total;
   const answeredTurns = session.players.reduce((sum, player) => sum + player.answered, 0);
   const correctTurns = session.players.reduce((sum, player) => sum + player.score, 0);
   const progress = total === 0 ? 0 : Math.round((completedQuestions / total) * 100);
@@ -105,6 +93,10 @@ export function getCompetitionStats(session) {
     remaining: Math.max(total - completedQuestions, 0),
     completedQuestions
   };
+}
+
+function getPlayerIndexForQuestion(questionIndex, playerCount) {
+  return playerCount === 0 ? 0 : questionIndex % playerCount;
 }
 
 export function getLeaderboard(players) {

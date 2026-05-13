@@ -13,7 +13,7 @@ import {
   getCompetitionStats,
   normalizePlayerNames
 } from "./core/competitionEngine.js";
-import { loadQuestions } from "./services/questionRepository.js";
+import { loadQuestions } from "./services/questionRepository.js?v=20260513-categories";
 import { getBestScore, saveBestScore } from "./services/storage.js";
 import {
   bindQuizEvents,

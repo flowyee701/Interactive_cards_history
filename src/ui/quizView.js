@@ -190,6 +190,7 @@ export function renderCompetitionSession(view, session, stats, timerState = crea
   view.difficulty.textContent = `${activePlayer.name}'s turn`;
   view.tags.replaceChildren(
     createTag("room competition"),
+    createTag(`Card ${session.currentIndex + 1} of ${stats.total}`),
     createTag(`Player ${session.currentPlayerIndex + 1} of ${session.players.length}`)
   );
 
@@ -233,7 +234,7 @@ export function renderStartScreen(
   view.resultBadge.classList.remove("is-wrong");
   view.explanation.textContent =
     mode === "competition"
-      ? "Add player names, choose a period, then start the room quiz. Everyone answers the same card in turn."
+      ? "Add player names, choose a period, then start the room quiz. Players take turns on different cards from the same deck."
       : shuffleEnabled
         ? "Choose a period if you want a focused deck, then start the quiz. Cards will be shuffled."
         : "Review order is on. Cards will follow the exact order from the question file.";
@@ -255,7 +256,7 @@ export function renderStartScreen(
   view.sessionTitle.textContent = mode === "competition" ? "Room Ready" : "Ready to Start";
   view.sessionNote.textContent =
     mode === "competition"
-      ? "Pass the keyboard or click answers for each player. Number keys 1-4 still work."
+      ? "Pass the keyboard or click answers for each player. Every turn opens a new card."
       : "The deck will shuffle when you begin. Use number keys 1-4 to answer faster.";
   view.nextButton.disabled = total === 0;
   view.nextButton.textContent = mode === "competition" ? "Start Room" : "Start Quiz";
@@ -366,18 +367,19 @@ function renderCompetitionResult(view, session, question, activePlayer) {
   clearResultSummary(view);
   renderSource(view, question.source);
   view.sessionTitle.textContent = isCorrect ? "Point Scored" : "No Point";
-  view.sessionNote.textContent = hasMorePlayersOnQuestion(session)
-    ? "Next passes this same question to the next player."
-    : "Next moves the room to the following question.";
+  view.sessionNote.textContent = hasMoreCompetitionCards(session)
+    ? "Next opens a different card for the next player."
+    : "Next shows the final standings.";
   view.restartButton.disabled = false;
 }
 
 function renderCompetitionControls(view, session) {
   const hasAnswer = Boolean(session.lastAnswer);
+  const hasNextCard = hasMoreCompetitionCards(session);
 
   setControlsDisabled(view, hasAnswer || session.isComplete);
   view.nextButton.disabled = !hasAnswer && !session.isComplete;
-  view.nextButton.textContent = hasMorePlayersOnQuestion(session) ? "Next Player" : "Next Question";
+  view.nextButton.textContent = hasNextCard ? "Next Player Card" : "Results";
   view.restartButton.disabled = false;
 }
 
@@ -606,8 +608,8 @@ function getResultBadgeText(isCorrect, correctAnswerLabel, timedOut) {
   return isCorrect ? "Correct" : `Incorrect, correct answer: ${correctAnswerLabel}`;
 }
 
-function hasMorePlayersOnQuestion(session) {
-  return session.currentPlayerIndex + 1 < session.players.length;
+function hasMoreCompetitionCards(session) {
+  return session.currentIndex + 1 < session.questions.length;
 }
 
 function sortPlayers(players) {

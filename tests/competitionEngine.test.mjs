@@ -32,34 +32,25 @@ const duplicateAnswer = answerCompetitionQuestion(annaCorrect, "b");
 assert.equal(duplicateAnswer, annaCorrect);
 
 const borisTurn = advanceCompetition(annaCorrect);
-assert.equal(borisTurn.currentIndex, 0);
+assert.equal(borisTurn.currentIndex, 1);
 assert.equal(borisTurn.currentPlayerIndex, 1);
 assert.equal(borisTurn.lastAnswer, null);
+assert.equal(borisTurn.questions[borisTurn.currentIndex].id, "q2");
 
-const borisWrong = answerCompetitionQuestion(borisTurn, "b");
-assert.equal(borisWrong.players[1].score, 0);
-assert.equal(borisWrong.players[1].streak, 0);
-assert.deepEqual(getCompetitionStats(borisWrong), {
+const borisCorrect = answerCompetitionQuestion(borisTurn, "b");
+assert.equal(borisCorrect.players[1].score, 1);
+assert.equal(borisCorrect.players[1].streak, 1);
+assert.deepEqual(getCompetitionStats(borisCorrect), {
   total: 2,
-  totalTurns: 4,
+  totalTurns: 2,
   answeredTurns: 2,
-  progress: 50,
-  accuracy: 50,
-  remaining: 1,
-  completedQuestions: 1
+  progress: 100,
+  accuracy: 100,
+  remaining: 0,
+  completedQuestions: 2
 });
 
-const nextQuestion = advanceCompetition(borisWrong);
-assert.equal(nextQuestion.currentIndex, 1);
-assert.equal(nextQuestion.currentPlayerIndex, 0);
-assert.equal(nextQuestion.isComplete, false);
-
-const completed = advanceCompetition(
-  answerCompetitionQuestion(
-    advanceCompetition(answerCompetitionQuestion(nextQuestion, "b")),
-    "b"
-  )
-);
+const completed = advanceCompetition(borisCorrect);
 assert.equal(completed.isComplete, true);
 assert.equal(getCompetitionStats(completed).progress, 100);
 

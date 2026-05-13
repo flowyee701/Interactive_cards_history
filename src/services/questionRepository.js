@@ -3,7 +3,9 @@ const SUPPORTED_DIFFICULTIES = new Set(["easy", "medium", "hard"]);
 const SUPPORTED_TYPES = new Set(["true_false", "multiple_choice"]);
 
 export async function loadQuestions() {
-  const response = await fetch(QUESTIONS_URL);
+  const response = await fetch(`${QUESTIONS_URL}?v=${Date.now()}`, {
+    cache: "no-store"
+  });
 
   if (!response.ok) {
     throw new Error(`Could not load questions: ${response.status}`);

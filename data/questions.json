@@ -2,7 +2,7 @@
   {
     "id": "user-quiz-001",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "1920s-1930s: Early Soviet Life",
     "question": "What was the name of the standardized small kitchen appliance found in almost every Soviet household for making carbonated water at home?",
     "options": [
       { "id": "a", "label": "Seltzer bottle" },
@@ -18,7 +18,7 @@
   {
     "id": "user-quiz-002",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "1920s-1930s: Early Soviet Life",
     "question": "Which dairy product, sold in a distinctive trihedral paper carton, was a staple of Soviet school breakfasts?",
     "options": [
       { "id": "a", "label": "Kefir" },
@@ -34,7 +34,7 @@
   {
     "id": "user-quiz-003",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "1970s-1980s: Late Soviet Life",
     "question": "What was the typical nickname for the tiny studios in \"hotel-type\" dormitories built for single workers and young families in the 1970s?",
     "options": [
       { "id": "a", "label": "Malosemeyka" },
@@ -50,7 +50,7 @@
   {
     "id": "user-quiz-004",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "Everyday USSR: Culture and Society",
     "question": "Which product, sold in a yellow-and-brown cardboard box, was the Soviet equivalent of instant coffee and was widely despised for its taste?",
     "options": [
       { "id": "a", "label": "Arabica granules" },
@@ -66,7 +66,7 @@
   {
     "id": "user-quiz-005",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "Everyday USSR: Culture and Society",
     "question": "In Soviet playgrounds, what material was used to make the hot, metal \"pyramid\" climbing frames and roundabouts that often injured children?",
     "options": [
       { "id": "a", "label": "Stainless steel" },
@@ -82,7 +82,7 @@
   {
     "id": "user-quiz-006",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "1920s-1930s: Early Soviet Life",
     "question": "The \"Book of Tasty and Healthy Food\" recommended a particular salad for holidays. Which one became a staple of Soviet New Year tables?",
     "options": [
       { "id": "a", "label": "Vinegret" },
@@ -98,7 +98,7 @@
   {
     "id": "user-quiz-007",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "1970s-1980s: Late Soviet Life",
     "question": "What did Soviet shoppers call empty glass jars of a standard size that were used as currency to buy loose vodka in the 1970s-80s?",
     "options": [
       { "id": "a", "label": "Stakan" },
@@ -114,7 +114,7 @@
   {
     "id": "user-quiz-008",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "Everyday USSR: Culture and Society",
     "question": "Which type of floor covering was most common in Soviet apartments in the 1960s-70s, made of small interlocking planks?",
     "options": [
       { "id": "a", "label": "Linoleum" },
@@ -130,7 +130,7 @@
   {
     "id": "user-quiz-009",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "Everyday USSR: Culture and Society",
     "question": "What was the universal Soviet adhesive meant for fixing everything from shoes to children's toys, stored in a tiny glass bottle and smelling of acetone?",
     "options": [
       { "id": "a", "label": "PVA glue" },
@@ -146,7 +146,7 @@
   {
     "id": "user-quiz-010",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "Everyday USSR: Culture and Society",
     "question": "In a typical Soviet school, what was the name of the student on \"duty\" who checked collar cleanliness and hair length?",
     "options": [
       { "id": "a", "label": "Kommissar" },
@@ -162,7 +162,7 @@
   {
     "id": "user-quiz-011",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "1920s-1930s: Early Soviet Life",
     "question": "What did the abbreviation \"BOMZH\" originally mean in Soviet official documents (not the later slang for homeless)?",
     "options": [
       { "id": "a", "label": "Homeless person" },
@@ -178,7 +178,7 @@
   {
     "id": "user-quiz-012",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "1920s-1930s: Early Soviet Life",
     "question": "Which fruit compote was most commonly served in Soviet factory canteens and kindergartens, made from dried apples?",
     "options": [
       { "id": "a", "label": "Cherry compote" },
@@ -194,7 +194,7 @@
   {
     "id": "user-quiz-013",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "1920s-1930s: Early Soviet Life",
     "question": "Soviet synthetic rubber \"galoshes\" were worn not only in rain. For what secondary purpose were they widely used?",
     "options": [
       { "id": "a", "label": "As flower pots" },
@@ -210,7 +210,7 @@
   {
     "id": "user-quiz-014",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "1970s-1980s: Late Soviet Life",
     "question": "In the courtyard culture of 1970s-80s USSR, what did the game \"Rubber band\" involve?",
     "options": [
       { "id": "a", "label": "A slingshot" },
@@ -226,7 +226,7 @@
   {
     "id": "user-quiz-015",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "1920s-1930s: Early Soviet Life",
     "question": "What was the name of the standardized three-liter glass jar used throughout the USSR for preserving cucumbers, tomatoes, and mushrooms?",
     "options": [
       { "id": "a", "label": "Litrovaya banka" },
@@ -242,7 +242,7 @@
   {
     "id": "user-quiz-016",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "Everyday USSR: Culture and Society",
     "question": "By what nickname was the Soviet artist Oleg Popov known?",
     "options": [
       { "id": "a", "label": "The Sunshine Clown" },
@@ -258,7 +258,7 @@
   {
     "id": "user-quiz-017",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "Everyday USSR: Culture and Society",
     "question": "What was the name of the car that became the \"people's car\" of the Soviet Union and was the most affordable vehicle of its era, and was also nicknamed \"humpbacked\" because of its shape?",
     "options": [
       { "id": "a", "label": "Moskvich" },
@@ -274,7 +274,7 @@
   {
     "id": "user-quiz-018",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "1940s-1960s: War, Thaw and Space",
     "question": "Which US president was given a puppy of the Soviet cosmonaut dog Strelka?",
     "options": [
       { "id": "a", "label": "Lyndon Johnson" },
@@ -290,7 +290,7 @@
   {
     "id": "user-quiz-019",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "Everyday USSR: Culture and Society",
     "question": "Which agricultural crop in the Soviet Union was called the \"queen of the fields\"?",
     "options": [
       { "id": "a", "label": "Wheat" },
@@ -306,7 +306,7 @@
   {
     "id": "user-quiz-020",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "Everyday USSR: Culture and Society",
     "question": "What was the name of the Soviet TV show, which became a special symbol of various holidays and especially the new year, and which still exists today?",
     "options": [
       { "id": "a", "label": "Little Blue Light" },
@@ -322,7 +322,7 @@
   {
     "id": "user-quiz-021",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "Everyday USSR: Culture and Society",
     "question": "Which Soviet poet was sent into exile for social parasitism in the Arkhangelsk region?",
     "options": [
       { "id": "a", "label": "Anna Akhmatova" },
@@ -338,7 +338,7 @@
   {
     "id": "user-quiz-022",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "1940s-1960s: War, Thaw and Space",
     "question": "In what year was Bulgakov's novel \"The Master and Margarita\" first published in the USSR?",
     "options": [
       { "id": "a", "label": "1973" },
@@ -354,7 +354,7 @@
   {
     "id": "user-quiz-023",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "1920s-1930s: Early Soviet Life",
     "question": "What was the name of those in the USSR who often changed jobs, running from company to company?",
     "options": [
       { "id": "a", "label": "The drifters (Skitaltsy)" },
@@ -370,7 +370,7 @@
   {
     "id": "user-quiz-024",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "1920s-1930s: Early Soviet Life",
     "question": "What was customary in the Soviet Union to celebrate Lenin's birthday?",
     "options": [
       { "id": "a", "label": "Subbotnik (cleaning day)" },
@@ -386,7 +386,7 @@
   {
     "id": "user-quiz-025",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "1940s-1960s: War, Thaw and Space",
     "question": "What was the name of the Soviet cosmonaut who was the second in the world to fly into space?",
     "options": [
       { "id": "a", "label": "Valery Fyodorovich Bykovsky" },
@@ -402,7 +402,7 @@
   {
     "id": "user-quiz-026",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "Everyday USSR: Culture and Society",
     "question": "What kind of material looked like chewing gum, which is why Soviet children loved to chew it?",
     "options": [
       { "id": "a", "label": "Tar (gudron)" },
@@ -418,7 +418,7 @@
   {
     "id": "user-quiz-027",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "1970s-1980s: Late Soviet Life",
     "question": "What was the name of the network of currency-only stores in the USSR where goods were sold for checks rather than ordinary rubles?",
     "options": [
       { "id": "a", "label": "Vesna" },
@@ -434,7 +434,7 @@
   {
     "id": "user-quiz-028",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "Everyday USSR: Culture and Society",
     "question": "What did Soviet people call literature published abroad and illegally brought into the country?",
     "options": [
       { "id": "a", "label": "Samizdat" },
@@ -450,7 +450,7 @@
   {
     "id": "user-quiz-029",
     "type": "multiple_choice",
-    "period": "1980s",
+    "period": "1970s-1980s: Late Soviet Life",
     "question": "What was the nickname of Mikhail Gorbachev's anti-alcohol campaign of 1985-1987?",
     "options": [
       { "id": "a", "label": "Sober Spring" },
@@ -466,7 +466,7 @@
   {
     "id": "user-quiz-030",
     "type": "multiple_choice",
-    "period": "1920s",
+    "period": "1920s-1930s: Early Soviet Life",
     "question": "What did people in the 1920s call a communal apartment with one kitchen and shared neighbors?",
     "options": [
       { "id": "a", "label": "Dormitory" },
@@ -482,7 +482,7 @@
   {
     "id": "user-quiz-031",
     "type": "multiple_choice",
-    "period": "1920s",
+    "period": "1920s-1930s: Early Soviet Life",
     "question": "What was often used as a sugar substitute in the 1920s because sugar was expensive?",
     "options": [
       { "id": "a", "label": "Honey" },
@@ -498,7 +498,7 @@
   {
     "id": "user-quiz-032",
     "type": "multiple_choice",
-    "period": "1920s",
+    "period": "1920s-1930s: Early Soviet Life",
     "question": "What did peasants receive in the kolkhoz instead of a salary in the 1920s-1930s?",
     "options": [
       { "id": "a", "label": "Bonds" },
@@ -514,7 +514,7 @@
   {
     "id": "user-quiz-033",
     "type": "multiple_choice",
-    "period": "1930s",
+    "period": "1920s-1930s: Early Soviet Life",
     "question": "What sparkling wine became the main decoration of the Soviet holiday table in the 1930s?",
     "options": [
       { "id": "a", "label": "Rkatsiteli" },
@@ -530,7 +530,7 @@
   {
     "id": "user-quiz-034",
     "type": "multiple_choice",
-    "period": "1930s",
+    "period": "1920s-1930s: Early Soviet Life",
     "question": "Which perfume became a symbol of female elegance in the 1930s?",
     "options": [
       { "id": "a", "label": "Silver Lily of the Valley" },
@@ -546,7 +546,7 @@
   {
     "id": "user-quiz-035",
     "type": "multiple_choice",
-    "period": "1940s",
+    "period": "1940s-1960s: War, Thaw and Space",
     "question": "What small metal stove, which saved lives during the war, was called a \"time stove\"?",
     "options": [
       { "id": "a", "label": "Burzhuika" },
@@ -562,7 +562,7 @@
   {
     "id": "user-quiz-036",
     "type": "multiple_choice",
-    "period": "1940s",
+    "period": "1940s-1960s: War, Thaw and Space",
     "question": "What formed the basis of the siege ration by ration cards in Leningrad?",
     "options": [
       { "id": "a", "label": "Bread" },
@@ -578,7 +578,7 @@
   {
     "id": "user-quiz-037",
     "type": "multiple_choice",
-    "period": "1940s",
+    "period": "1940s-1960s: War, Thaw and Space",
     "question": "What was folded into a triangle and sent to and from the front?",
     "options": [
       { "id": "a", "label": "A newspaper" },
@@ -594,7 +594,7 @@
   {
     "id": "user-quiz-038",
     "type": "multiple_choice",
-    "period": "1940s",
+    "period": "1940s-1960s: War, Thaw and Space",
     "question": "What did people call the \"black plate\" used to listen to Sovinformburo reports?",
     "options": [
       { "id": "a", "label": "Gramophone" },
@@ -610,7 +610,7 @@
   {
     "id": "user-quiz-039",
     "type": "multiple_choice",
-    "period": "1950s",
+    "period": "1940s-1960s: War, Thaw and Space",
     "question": "What household appliance began to massively enter homes and change family leisure in the 1950s?",
     "options": [
       { "id": "a", "label": "Refrigerator" },
@@ -626,7 +626,7 @@
   {
     "id": "user-quiz-040",
     "type": "multiple_choice",
-    "period": "1950s",
+    "period": "1940s-1960s: War, Thaw and Space",
     "question": "What shoes with a thick white sole were the ultimate dream of \"stilyagi\"?",
     "options": [
       { "id": "a", "label": "Sandals" },
@@ -642,7 +642,7 @@
   {
     "id": "user-quiz-041",
     "type": "multiple_choice",
-    "period": "1950s",
+    "period": "1940s-1960s: War, Thaw and Space",
     "question": "What was the name of the first small-sized apartments with a combined bathroom in the 1950s-1960s?",
     "options": [
       { "id": "a", "label": "Small-family apartments" },
@@ -658,7 +658,7 @@
   {
     "id": "user-quiz-042",
     "type": "multiple_choice",
-    "period": "1960s",
+    "period": "1940s-1960s: War, Thaw and Space",
     "question": "What drink was sold in vending machines for 3 kopecks (with syrup) and 1 kopeck (without)?",
     "options": [
       { "id": "a", "label": "Kvass" },
@@ -674,7 +674,7 @@
   {
     "id": "user-quiz-043",
     "type": "multiple_choice",
-    "period": "1960s",
+    "period": "1940s-1960s: War, Thaw and Space",
     "question": "What device did children use to watch filmstrips on the wall?",
     "options": [
       { "id": "a", "label": "Movie projector" },
@@ -690,7 +690,7 @@
   {
     "id": "user-quiz-044",
     "type": "multiple_choice",
-    "period": "1960s",
+    "period": "1940s-1960s: War, Thaw and Space",
     "question": "What hairstyle with backcombing was fashionable among women in the 1960s?",
     "options": [
       { "id": "a", "label": "Bob" },
@@ -706,7 +706,7 @@
   {
     "id": "user-quiz-045",
     "type": "multiple_choice",
-    "period": "1970s",
+    "period": "1970s-1980s: Late Soviet Life",
     "question": "What woven bag was an essential attribute in case of sudden shortages in the 1970s?",
     "options": [
       { "id": "a", "label": "Backpack" },
@@ -722,7 +722,7 @@
   {
     "id": "user-quiz-046",
     "type": "multiple_choice",
-    "period": "1970s",
+    "period": "1970s-1980s: Late Soviet Life",
     "question": "What was \"varenyka\" in a 1970s wardrobe?",
     "options": [
       { "id": "a", "label": "Knitted sweater" },
@@ -738,7 +738,7 @@
   {
     "id": "user-quiz-047",
     "type": "multiple_choice",
-    "period": "1970s",
+    "period": "1970s-1980s: Late Soviet Life",
     "question": "What juice in a three-liter jar stood on the balcony of almost every family in the 1970s?",
     "options": [
       { "id": "a", "label": "Apple" },
@@ -754,7 +754,7 @@
   {
     "id": "user-quiz-048",
     "type": "multiple_choice",
-    "period": "1980s",
+    "period": "1970s-1980s: Late Soviet Life",
     "question": "What chewing gum with stickers became a cult item for Soviet children in the 1980s?",
     "options": [
       { "id": "a", "label": "Orbit" },
@@ -770,7 +770,7 @@
   {
     "id": "user-quiz-049",
     "type": "multiple_choice",
-    "period": "1980s",
+    "period": "1970s-1980s: Late Soviet Life",
     "question": "Where did teenagers watch banned Western movies in the 1980s?",
     "options": [
       { "id": "a", "label": "Cinema" },
@@ -786,7 +786,7 @@
   {
     "id": "user-quiz-050",
     "type": "multiple_choice",
-    "period": "1980s",
+    "period": "1970s-1980s: Late Soviet Life",
     "question": "What did the word \"blat\" mean in the 1980s?",
     "options": [
       { "id": "a", "label": "Speculation" },
@@ -802,7 +802,7 @@
   {
     "id": "user-quiz-051",
     "type": "multiple_choice",
-    "period": "1980s",
+    "period": "1970s-1980s: Late Soviet Life",
     "question": "What did children trade at school, collecting colorful paper pieces?",
     "options": [
       { "id": "a", "label": "Stamps" },
@@ -818,7 +818,7 @@
   {
     "id": "user-quiz-052",
     "type": "multiple_choice",
-    "period": "1970s",
+    "period": "1970s-1980s: Late Soviet Life",
     "question": "Which soft drink, created in the USSR in the 1970s, became extremely popular and was often considered the Soviet answer to Coca-Cola?",
     "options": [
       { "id": "a", "label": "Baikal" },
@@ -834,7 +834,7 @@
   {
     "id": "user-quiz-053",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "1970s-1980s: Late Soviet Life",
     "question": "What system of state-controlled distribution of scarce goods required Soviet citizens to obtain special stamps or coupons to purchase items like sugar, soap, or clothing?",
     "options": [
       { "id": "a", "label": "The queue (ochered)" },
@@ -850,7 +850,7 @@
   {
     "id": "user-quiz-054",
     "type": "multiple_choice",
-    "period": "USSR",
+    "period": "Everyday USSR: Culture and Society",
     "question": "In Soviet catering establishments, there was a famous joke that which dish tasted exactly the same in Riga as in Vladivostok, supposedly due to centralized recipe standardization?",
     "options": [
       { "id": "a", "label": "Meatball (kotleta)" },
@@ -866,7 +866,7 @@
   {
     "id": "user-quiz-055",
     "type": "multiple_choice",
-    "period": "1950s",
+    "period": "1940s-1960s: War, Thaw and Space",
     "question": "Which non-conformist Soviet youth subculture of the late 1940s-1960s was known as \"style hunters\" and famously pressed bootleg records onto recycled X-ray films, creating ghostly \"bone\" records?",
     "options": [
       { "id": "a", "label": "Stilyagi" },
