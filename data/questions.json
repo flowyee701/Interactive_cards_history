@@ -814,5 +814,69 @@
     "explanation": "The correct answer is Candy wrappers.",
     "difficulty": "easy",
     "tags": ["1980s", "children", "school"]
+  },
+  {
+    "id": "user-quiz-052",
+    "type": "multiple_choice",
+    "period": "1970s",
+    "question": "Which soft drink, created in the USSR in the 1970s, became extremely popular and was often considered the Soviet answer to Coca-Cola?",
+    "options": [
+      { "id": "a", "label": "Baikal" },
+      { "id": "b", "label": "Sitro" },
+      { "id": "c", "label": "Duchess" },
+      { "id": "d", "label": "Tarhun" }
+    ],
+    "answer": "a",
+    "explanation": "The correct answer is Baikal.",
+    "difficulty": "easy",
+    "tags": ["1970s", "drink", "consumer goods"]
+  },
+  {
+    "id": "user-quiz-053",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "What system of state-controlled distribution of scarce goods required Soviet citizens to obtain special stamps or coupons to purchase items like sugar, soap, or clothing?",
+    "options": [
+      { "id": "a", "label": "The queue (ochered)" },
+      { "id": "b", "label": "The card system (kartochnaya sistema)" },
+      { "id": "c", "label": "The ration book (talony)" },
+      { "id": "d", "label": "The order form (zakaz)" }
+    ],
+    "answer": "b",
+    "explanation": "The correct answer is The card system (kartochnaya sistema).",
+    "difficulty": "medium",
+    "tags": ["shortage", "distribution", "everyday life"]
+  },
+  {
+    "id": "user-quiz-054",
+    "type": "multiple_choice",
+    "period": "USSR",
+    "question": "In Soviet catering establishments, there was a famous joke that which dish tasted exactly the same in Riga as in Vladivostok, supposedly due to centralized recipe standardization?",
+    "options": [
+      { "id": "a", "label": "Meatball (kotleta)" },
+      { "id": "b", "label": "Borscht" },
+      { "id": "c", "label": "Pelmeni" },
+      { "id": "d", "label": "Kasha" }
+    ],
+    "answer": "a",
+    "explanation": "The correct answer is Meatball (kotleta).",
+    "difficulty": "medium",
+    "tags": ["canteen", "food", "standardization"]
+  },
+  {
+    "id": "user-quiz-055",
+    "type": "multiple_choice",
+    "period": "1950s",
+    "question": "Which non-conformist Soviet youth subculture of the late 1940s-1960s was known as \"style hunters\" and famously pressed bootleg records onto recycled X-ray films, creating ghostly \"bone\" records?",
+    "options": [
+      { "id": "a", "label": "Stilyagi" },
+      { "id": "b", "label": "Letuni" },
+      { "id": "c", "label": "Pionery" },
+      { "id": "d", "label": "Komsomoltsy" }
+    ],
+    "answer": "a",
+    "explanation": "The correct answer is Stilyagi.",
+    "difficulty": "medium",
+    "tags": ["1950s", "youth", "music"]
   }
 ]
