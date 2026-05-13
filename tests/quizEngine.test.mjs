@@ -76,4 +76,8 @@ const answeredMultipleChoice = answerCurrentQuestion(multipleChoiceSession, "b")
 assert.equal(answeredMultipleChoice.score, 1);
 assert.equal(answeredMultipleChoice.lastAnswer.correctAnswer, "b");
 
+const timedOutSession = answerCurrentQuestion(createQuizSession([questions[4]]), null, { timedOut: true });
+assert.equal(timedOutSession.score, 0);
+assert.equal(timedOutSession.lastAnswer.timedOut, true);
+
 console.log("quizEngine tests passed");

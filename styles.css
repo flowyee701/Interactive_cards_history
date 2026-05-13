@@ -712,6 +712,56 @@ button {
   font-weight: 750;
 }
 
+.room-settings {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 248, 234, 0.66);
+}
+
+.room-settings[hidden] {
+  display: none;
+}
+
+.room-settings .eyebrow {
+  margin-bottom: 0;
+}
+
+.player-field {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.player-field input {
+  width: 100%;
+  min-height: 40px;
+  padding: 0 11px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 750;
+}
+
+.player-field input:focus {
+  outline: 3px solid rgba(47, 132, 124, 0.18);
+  border-color: var(--mint);
+}
+
+.room-settings__hint {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
 .progress-block {
   margin-top: 22px;
 }
@@ -920,6 +970,27 @@ button {
 
 .question-meta span {
   overflow-wrap: anywhere;
+}
+
+.timer-pill {
+  min-width: 74px;
+  padding: 4px 8px;
+  border: 1px solid rgba(32, 35, 38, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 248, 234, 0.78);
+  color: var(--mint);
+  text-align: center;
+}
+
+.timer-pill[hidden] {
+  display: none;
+}
+
+.timer-pill.is-warning {
+  border-color: rgba(186, 45, 45, 0.42);
+  background: #f3d0cb;
+  color: var(--red-deep);
+  animation: timerPulse 700ms ease-in-out infinite;
 }
 
 .question-text {
@@ -1140,6 +1211,65 @@ button {
   font-size: 1.45rem;
 }
 
+.leaderboard {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.leaderboard[hidden] {
+  display: none;
+}
+
+.leaderboard h3 {
+  margin: 0 0 2px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.leaderboard__row {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: 8px 10px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 248, 234, 0.7);
+}
+
+.leaderboard__row.is-active {
+  border-color: rgba(47, 132, 124, 0.58);
+  background: rgba(214, 237, 231, 0.72);
+  box-shadow: inset 4px 0 0 var(--mint);
+}
+
+.leaderboard__row strong {
+  color: var(--red-deep);
+  font-size: 0.82rem;
+}
+
+.leaderboard__row span,
+.leaderboard__row b {
+  overflow-wrap: anywhere;
+  font-size: 0.9rem;
+}
+
+.leaderboard__row span {
+  font-weight: 850;
+}
+
+.leaderboard__row b {
+  justify-self: end;
+}
+
+.leaderboard__row small {
+  grid-column: 2 / 4;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
 @keyframes cardPulse {
   0% {
     transform: scale(1);
@@ -1149,6 +1279,16 @@ button {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes timerPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
   }
 }
 

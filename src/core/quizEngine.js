@@ -25,7 +25,7 @@ export function getCurrentQuestion(session) {
   return session.questions[session.currentIndex] ?? null;
 }
 
-export function answerCurrentQuestion(session, selectedAnswer) {
+export function answerCurrentQuestion(session, selectedAnswer, meta = {}) {
   const question = getCurrentQuestion(session);
 
   if (!question || session.lastAnswer) {
@@ -42,7 +42,8 @@ export function answerCurrentQuestion(session, selectedAnswer) {
     lastAnswer: {
       selectedAnswer,
       isCorrect,
-      correctAnswer: question.answer
+      correctAnswer: question.answer,
+      timedOut: Boolean(meta.timedOut)
     }
   };
 }

@@ -96,6 +96,34 @@
             </select>
           </label>
 
+          <label class="field" for="modeSelect">
+            <span>Mode</span>
+            <select id="modeSelect" data-control="mode" aria-label="Mode">
+              <option value="solo">Solo quiz</option>
+              <option value="competition">Room competition</option>
+            </select>
+          </label>
+
+          <label class="field" for="questionLimitSelect">
+            <span>Questions</span>
+            <select id="questionLimitSelect" data-control="question-limit" aria-label="Questions">
+              <option value="10" selected>10 questions</option>
+              <option value="20">20 questions</option>
+              <option value="all">All questions</option>
+            </select>
+          </label>
+
+          <label class="field" for="timerSelect">
+            <span>Timer</span>
+            <select id="timerSelect" data-control="timer" aria-label="Timer">
+              <option value="0">Off</option>
+              <option value="15">15 seconds</option>
+              <option value="30" selected>30 seconds</option>
+              <option value="45">45 seconds</option>
+              <option value="60">60 seconds</option>
+            </select>
+          </label>
+
           <label class="toggle-field" for="shuffleToggle">
             <input id="shuffleToggle" type="checkbox" data-control="shuffle" checked />
             <span>
@@ -103,6 +131,27 @@
               <small>Turn off for review order</small>
             </span>
           </label>
+
+          <div class="room-settings" data-room-settings hidden>
+            <p class="eyebrow">Players</p>
+            <label class="player-field">
+              <span>Player 1</span>
+              <input data-player-name type="text" value="Player 1" maxlength="24" />
+            </label>
+            <label class="player-field">
+              <span>Player 2</span>
+              <input data-player-name type="text" value="Player 2" maxlength="24" />
+            </label>
+            <label class="player-field">
+              <span>Player 3</span>
+              <input data-player-name type="text" placeholder="Optional" maxlength="24" />
+            </label>
+            <label class="player-field">
+              <span>Player 4</span>
+              <input data-player-name type="text" placeholder="Optional" maxlength="24" />
+            </label>
+            <p class="room-settings__hint">Blank names are skipped. The room needs at least two players.</p>
+          </div>
 
           <div class="progress-block" aria-label="Progress">
             <div class="progress-block__row">
@@ -130,6 +179,7 @@
               <div class="question-meta">
                 <span data-period-label>Period</span>
                 <span data-question-counter>Question 0 of 0</span>
+                <span class="timer-pill" data-timer hidden>Timer off</span>
                 <span data-difficulty>difficulty</span>
               </div>
 
@@ -177,6 +227,7 @@
               left
             </span>
           </div>
+          <div class="leaderboard" data-leaderboard hidden></div>
         </aside>
       </main>
     </div>
